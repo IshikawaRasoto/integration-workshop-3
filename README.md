@@ -18,6 +18,6 @@ This repository contains all the development for the course of Integration Works
 
 ## Links 🔗
 
-- Blog
+- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/Blog.md">Blog</a> :pencil2:
 
-- Schedule
+- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/Schedule.md">Schedule</a>:calendar:
