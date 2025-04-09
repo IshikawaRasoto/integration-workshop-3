@@ -1,5 +1,18 @@
 # Blog - Team #6
 
+> [!NOTE]
+> The more you scroll, older the posts will be.
+
+## 2nd Week (04/03/25 - 04/09/25)
+
+The feedback from the first week was the approval to continue develop our proposal A and also bring another idea. For this week, the team is supposed to deliver in more details both ideas.
+
+### Week Proposals
+
+- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/Melody.md">A. Melody</a> 🎵
+
+- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/ProposalB.md">B.  </a>
+
 ## 1st Week (03/27/25 - 04/02/25)
 
 As requested by the professors, the video below has a 10 minutes presentation about 3 proposals of projects to be developed during the course.
@@ -20,14 +33,3 @@ Project B seeks to solve a problema common in most of young adults lives. How to
 ### C. Parking Efficiency
 
 Project C has the objective to solve a problem common in parking lots of concerts and shopping malls in events. The idea is to develop a smart system that will control the flow of vehicles entering and exiting the shopping mall in the most efficient way. 
-
-## 2nd Week (04/03/25 - 04/09/25)
-
-The feedback from the first week was the approval to continue develop our proposal A and also bring another idea. For this week, the team is supposed to deliver in more details both ideas.
-
-### Week Proposals
-
-- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/Melody.md">A. Melody</a> 🎵
-
-- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/ProposalB.md">B.  </a>
-
