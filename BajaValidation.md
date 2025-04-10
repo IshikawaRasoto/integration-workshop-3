@@ -1,4 +1,4 @@
-# Baja Validation 🚙
+# ECUT - ECU Tester 🚙
 
 ## Intro 🚜
 
