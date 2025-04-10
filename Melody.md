@@ -1,4 +1,4 @@
-# Melody 🎵
+# Melody - MElodic LOgic for DYnamic learning 🎵
 
 ## Intro 🎼
 
@@ -94,7 +94,7 @@ We presume the system will have the following items:
 
 - Music Notes (flats, sharps and naturals)
 
-- Font
+- Power Supply
 
 ## BOM 💵 
 
