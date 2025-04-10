@@ -77,6 +77,9 @@ The third mode will be simillar to the second one, it will also want the childre
 
 ![image](https://github.com/user-attachments/assets/783abdef-b896-49bc-9d5f-34d7bf900715)
 
+## Meeting with Professor Ellen Carolina Ott - CAART 🎻💬
+
+A meeting was done with professor Ott to present our project and ask for her opinion. She stated that the project was spetacular and she has been trying to find a project with these caracteristcs for years. Even abroad she didn't find anything like ours. She suggested to implement more colors and different notes tempos. Ms. Ott thinks that the project is great, and it would have a really meaningful impact in the way that music teachers interact with their students.
 
 ## Components 📷
 
