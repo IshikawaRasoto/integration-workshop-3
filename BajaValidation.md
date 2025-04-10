@@ -95,6 +95,7 @@ The tester will host a local Wi-Fi network that will serve as an interface to th
 ## BOM 💵
 
 | Item | Quantity | Price (R$) |
+| --- | --- | --- |
 | DC Motor | 4 | 80,00 |
 | RPM sensors | 4 | 100,00 |
 | DC Motor Driver | 2 | 40.00 |
