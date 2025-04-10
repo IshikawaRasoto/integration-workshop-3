@@ -11,7 +11,7 @@ The feedback from the first week was the approval to continue develop our propos
 
 - <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/Melody.md">A. Melody</a> 🎵
 
-- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/ProposalB.md">B.  </a>
+- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/BajaValidation.md">B. Baja Validation </a> 🚙
 
 ## 1st Week (03/27/25 - 04/02/25)
 
