@@ -5,6 +5,13 @@
 
 ## 2nd Week (04/03/25 - 04/09/25)
 
+### Video of the week
+
+https://github.com/user-attachments/assets/f6084483-0107-445c-9c83-dd5aefe4133e
+
+> [!NOTE]
+> If the video above doesn't work, here is the <a href="https://drive.google.com/file/d/1AGoXJWrNMAOkMldZtp4LrVlzvFSptPVR/view?usp=drive_link">link</a>
+
 The feedback from the first week was the approval to continue develop our proposal A and also bring another idea. For this week, the team is supposed to deliver in more details both ideas.
 
 ### Week Proposals
