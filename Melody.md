@@ -101,11 +101,12 @@ We presume the system will have the following items:
 
 ## BOM 💵 
 
-| Item | Preço |
+| Item | Price |
 | --- | --- |
-| Câmera USB | R$ 130,00 |
+| USB Cam | R$ 130,00 |
 | Raspberry Pi 4 B | R$ 570,00 |
-| Impressão 3D (2 rolos de PLA) | R$ 200,00 |
-| Compensado para tabuleiro e suporte da câmera | R$ 70,00 - R$ 300,00 |
-| Componentes eletrônicos gerais | R$ 0,00 - R$ 75,00 |
-| Total | R$ 970,00 - R$ 1.275,00 |
+| 3D Printing (2 PLA rolls) | R$ 200,00 |
+| Plywood for board and camera mount | R$ 70,00 - R$ 200,00 |
+| Simple Speaker | R$ 50,00 |
+| General electronic components | R$ 0,00 - R$ 75,00 |
+| Total | R$ 1020,00 - R$ 1.225,00 |
