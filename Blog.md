@@ -1,9 +1,29 @@
 # Blog - Team #6
 
+## Links 🔗
+
+- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/Schedule.md">Schedule</a> 📆
+
+- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/tree/main">Project overview</a> 🔍
+
 > [!NOTE]
 > The more you scroll, older the posts will be.
 
-## 2nd Week (04/03/25 - 04/09/25)
+## 3rd week (10/04/25 - 16/04/25)
+
+In last week's class we defined Melody as our project for the rest of the semester. Therefore, this week will be focused on planning the schedule, defining requirements, developing basic diagrams and planning the system budget.
+
+### Video of the week
+
+### Meetings Schedule:
+
+- Mon (14/04/25): Enhance the electronic part of the project, define the requirements of the project.
+
+- Tue (15/04/25): Plan the project schedule, delegate responsabilities to the project members.
+
+- Wen (16/04/25): Project diagrams, B.O.M, 
+
+## 2nd Week (03/04/25 - 09/04/25)
 
 ### Video of the week
 
@@ -20,7 +40,7 @@ The feedback from the first week was the approval to continue develop our propos
 
 - <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/BajaValidation.md">B. Baja Validation </a> 🚙
 
-## 1st Week (03/27/25 - 04/02/25)
+## 1st Week (27/03/25 - 02/04/25)
 
 As requested by the professors, the video below has a 10 minutes presentation about 3 proposals of projects to be developed during the course.
 
