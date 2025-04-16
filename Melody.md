@@ -3,7 +3,7 @@
 ## Intro 🎼
 
 Nowadays many music teachers complain about the lack of interest that children are presenting toward learning new instruments and therefore music theory, due to the fact that new generations are presenting difficulties when dealing with frustration.
-Instruments such as piano and violin present a difficult learning curve, of which many children show the behaviour of not having the patience to pass through the initial stages of boring exercises and learning to read musical sheets.
+Instruments such as piano and violin present a difficult learning curve, of which many children show the behavior of not having the patience to pass through the initial stages of boring exercises and learning to read musical sheets.
 
 With this problem in mind, we propose the development of an embedded system that will serve as an auxiliary tool for music teachers to teach their students about music sheets and music theory. It will catch the children attention by letting them position the notes in a music sheet template and leeting them hear the melody.
 
@@ -79,13 +79,13 @@ The third mode will be simillar to the second one, it will also want the childre
 
 ## Meeting with Professor Ellen Carolina Ott - CAART 🎻💬
 
-A meeting was done with professor Ott to present our project and ask for her opinion. She stated that the project was spetacular and she has been trying to find a project with these caracteristcs for years. Even abroad she didn't find anything like ours. She suggested to implement more colors and different notes tempos. Ms. Ott thinks that the project is great, and it would have a really meaningful impact in the way that music teachers interact with their students.
+A meeting was done with professor Ott to present our project and ask for her opinion. She stated that the project was spectacular and she has been trying to find a project with these characteristics for years. Even abroad she didn't find anything like ours. She suggested to implement more colors and different notes tempos. Ms. Ott thinks that the project is great, and it would have a really meaningful impact in the way that music teachers interact with their students.
 
 ## Components 📷
 
 We presume the system will have the following items:
 
-- Raspbery PI 4 B
+- Raspberry PI 4 B
 
 - WebCam
 
@@ -98,16 +98,3 @@ We presume the system will have the following items:
 - Music Notes (flats, sharps and naturals)
 
 - Power Supply
-
-## BOM 💵 
-
-| Item | Price |
-| --- | --- |
-| USB Cam | R$ 100,00 |
-| Raspberry Pi 4 B | R$ 400,00 |
-| 3D Printing (2 PLA rolls) | R$ 150,00 |
-| Plywood for board and camera mount | R$ 70,00 - R$ 200,00 |
-| Simple Speaker | R$ 50,00 |
-| General electronic components | R$ 15,00 - R$ 75,00 |
-| 2x Light Sources | R$ 30,00 |
-| Total | R$ 815,00 - R$ 1.005,00 |

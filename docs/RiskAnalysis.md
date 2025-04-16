@@ -1,0 +1,39 @@
+# Risks
+
+## Risks Analysis
+- `!` PRECISA DE PELO MENOS 20 RISCOS
+
+- R01:
+- R02:
+- R03:
+- R04:
+- R05:
+- R06:
+- R07:
+- R08:
+- R09:
+- R10:
+- R11:
+- R12:
+- R13:
+- R14:
+- R15:
+- R16:
+- R17:
+- R18:
+- R19:
+- R20:
+
+## Risk response plans
+- `!` DESCREVER O PLANO DE AÇÃO PARA OS 10 RISCOS COM MAIOR PROBABILIDADE
+
+- R01:
+- R02:
+- R03:
+- R04:
+- R05:
+- R06:
+- R07:
+- R08:
+- R09:
+- R10:
