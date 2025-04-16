@@ -2,7 +2,7 @@
 
 ## Links 🔗
 
-- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/Schedule.md">Schedule</a> 📆
+- [Schedule](./docs/Schedule.md) 📆
 
 - <a href="https://github.com/IshikawaRasoto/integration-workshop-3/tree/main">Project overview</a> 🔍
 
