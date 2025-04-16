@@ -23,3 +23,5 @@
 | R21  | Team disagreement on feature scope or design | 1 | 2 | 2  |  |
 | R22  | Power supply is unstable or insufficient | 1 | 1 | 1  |  |
 
+> [!NOTE]
+> The mitigation strategy is only a preview, after discussion it will be created the risk response plan.
