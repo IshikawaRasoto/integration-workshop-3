@@ -9,7 +9,7 @@ With this problem in mind, we propose the development of an embedded system that
 
 ## Project description 📋
 
-The project will work arround a wood board that will be painted on top with a music sheet template.
+The project will work around a wood board that will be painted on top with a music sheet template.
 
 ![PartituraBranca](https://github.com/user-attachments/assets/24a49d9d-935f-4660-8890-c2ee6ce10ac3)
 
@@ -19,7 +19,7 @@ The system in it's default mode of operation will be able playing the melody in 
 
 The second mode of operation will be a mode that the system will tell by it's interface to the kid which note it wants. The melody will be pre-determined by a pre-loaded song.
 
-The third mode will be simillar to the second one, it will also want the children to place notes determined by a pre-loaded song. However, the interface will be by sound, the system will play the note and the user should place the note in the right place by it's frequency.
+The third mode will be similar to the second one, it will also want the children to place notes determined by a pre-loaded song. However, the interface will be by sound, the system will play the note and the user should place the note in the right place by it's frequency.
 
 ![image](https://github.com/user-attachments/assets/13328c2f-e02f-4356-a31a-22013e4a0186)
 
@@ -30,25 +30,15 @@ The third mode will be simillar to the second one, it will also want the childre
 ### Board Specs 📐
 
 - The board will be painted or drawn with a blank music sheet.
-  
 - The board will have 4 compass
-  
 - Each compass will have 4 tempos
-
 - The board will have holes to place in a precise way the notes on the music sheet.
-
 - The holes will be placed trough 4 columns in each compass, each hole representing a single note.
-
 - Each hole`s column will represent one tempo in the compass.
-
 - The board will have in each tempo an RGB LED that will serve as part of the user interface.
-
 - The board should have an structure to hold a webcam and light sources over itself.
-
 - The board must have volume control.
-
 - The board must have tempo (rythm) control.
-
 - The board must be smaller than 1 meter in lenght.
 
 ![image](https://github.com/user-attachments/assets/6a7008e7-1987-46b1-9ee6-c036d438014e)
@@ -56,23 +46,14 @@ The third mode will be simillar to the second one, it will also want the childre
 ### Functionalities Specs 🔎
 
 - The system will have a default mode of operation that will play in loop the 16 tempos.
-
 - The system will have a mode in which it will tell the user a note, and when placed, the system will check it's placement and tell if it's right or wrong. When the song is finished, it will play the melody.
-
 - The system will have a mode in which it will play a note, and wait for the user to place it in the board. It will check if it's in the right place, and give the user the feedback. When the song is finished, it will play the melody.
-
 - The system will have 3 pre-loaded songs which will be played in the guessing modes.
-
 - The system will let the user control it's volume.
-
 - The system will let the user control the pacing.
-
 - The system will let the user choose different sounds to play each note on the default mode.
-
 - The flat note will be colored as blue.
-
 - The sharp note will be colored as red.
-
 - The natural notes will be colored as black.
 
 ![image](https://github.com/user-attachments/assets/783abdef-b896-49bc-9d5f-34d7bf900715)
@@ -86,15 +67,9 @@ A meeting was done with professor Ott to present our project and ask for her opi
 We presume the system will have the following items:
 
 - Raspberry PI 4 B
-
 - WebCam
-
 - Board
-
 - 2x light sources
-
 - Speaker
-
 - Music Notes (flats, sharps and naturals)
-
 - Power Supply
