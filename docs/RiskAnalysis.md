@@ -12,16 +12,15 @@
 | R10  | Failure in color recognition due to lighting or quality issues | 2 | 4 | 8  | Calibrate lighting early and use high-contrast colors/materials; use color correction in software |
 | R11  | Webcam image quality is insufficient for note detection | 2 | 4 | 8  | Try to solve this problem pra adjusting the software and if that doesn't work buy a new camera |
 | R12  | Software development takes longer than expected | 2 | 4 | 8  | Divide the tasks needed between the members of the team to complete them in a quick manner |
-| R13  | Web interface not working correctly on Raspberry Pi | 3 | 2 | 6  |  |
-| R14  | Bad communication between the hardware components | 2 | 3 | 6  | Have a backup way of communication between the hardware, and if that doesnt work, replace the hardware|
-| R15  | Fire at the university | 1 | 5 | 5  | Work outside the premises of the University |
-| R16  | Delays in delivery of components | 2 | 2 | 4  | Look for replacements on local shops |
-| R17  | Components not available in local stores for fast replacement | 2 | 2 | 4  | Buy a replacement component on the internet and/or order it on a local shop |
-| R18  | One or more modes fail to work as expected | 2 | 2 | 4  | Adjust the modes in a simple way to at least have a simple working mode |
-| R19  | Incompatibility between software and hardware (e.g., GPIO issues, camera integration) | 1 | 3 | 3  | Study new ways of communication between software and hardware |
-| R20  | Overbudget due to price changes in components | 1 | 3 | 3  | Change the components to cheaper replacements that are less powerful but works in the project scope |
-| R21  | Team disagreement on feature scope or design | 1 | 2 | 2  | Discuss the changes properly, and have a vote to settle the disagreement |
-| R22  | Power supply is unstable or insufficient | 1 | 1 | 1  | Replace with a more powerful power supply or make it work with batteries |
+| R13  | Bad communication between the hardware components | 2 | 3 | 6  | Have a backup way of communication between the hardware, and if that doesnt work, replace the hardware|
+| R14  | Fire at the university | 1 | 5 | 5  | Work outside the premises of the University |
+| R15  | Delays in delivery of components | 2 | 2 | 4  | Look for replacements on local shops |
+| R16  | Components not available in local stores for fast replacement | 2 | 2 | 4  | Buy a replacement component on the internet and/or order it on a local shop |
+| R17  | One or more modes fail to work as expected | 2 | 2 | 4  | Adjust the modes in a simple way to at least have a simple working mode |
+| R18  | Incompatibility between software and hardware (e.g., GPIO issues, camera integration) | 1 | 3 | 3  | Study new ways of communication between software and hardware |
+| R19  | Overbudget due to price changes in components | 1 | 3 | 3  | Change the components to cheaper replacements that are less powerful but works in the project scope |
+| R20  | Team disagreement on feature scope or design | 1 | 2 | 2  | Discuss the changes properly, and have a vote to settle the disagreement |
+| R21  | Power supply is unstable or insufficient | 1 | 1 | 1  | Replace with a more powerful power supply or make it work with batteries |
 
 > [!NOTE]
 > The mitigation strategy is only a preview, after discussion it will be created the risk response plan.
