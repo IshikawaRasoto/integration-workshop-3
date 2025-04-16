@@ -1,11 +1,11 @@
 | ID   | Risk Description | Probability (1–5) | Impact (1–5) | Risk Coefficient (P × I) | Mitigation Strategy (Preview) |
 |------|------------------|-------------------|--------------|--------------------------|---------------------|
 | R01  | PCB manufacturing delay or design mistake | 4 | 4 | 16 | Validate PCB with a breadboard prototype; send design early; use universal board |
-| R02  | A team member gives up the project | 3 | 5 | 15 | Deliver 80% of the project; have backup responsibilities and documented work |
+| R02  | A team member gives up the project | 3 | 5 | 15 | Deliver 80% of the project; have backup responsibilities and documented work ; have assistants on schedule|
 | R03  | Problems with Raspberry Pi performance (lag or overheating) | 3 | 4 | 12 | Use proper cooling and optimize image processing code |
-| R04  | Physical structure does not fit or align correctly (holes, webcam stand) | 3 | 4 | 12 | Prototype parts with cardboard before drilling; validate dimensions before final build |
+| R04  | Physical structure does not fit or align correctly (holes, webcam stand) | 3 | 4 | 12 | Prototype parts before drilling; validate dimensions before final build |
 | R05  | Bluetooth complicates interface development and prolongs the development | 3 | 4 | 12 | Start early development; change to wifi |
-| R06  | Raspberry Pi burns out | 2 | 5 | 10 | Lend from some colleague |
+| R06  | Raspberry Pi burns out | 2 | 5 | 10 | Lend from colleague |
 | R07  | Poor RGB LED feedback or sync issues | 3 | 3 | 9  | Test LED logic and connections early |
 | R08  | Electronic design error | 3 | 3 | 9  | Conduct thorough schematic reviews and prototype key circuits |
 | R09  | Hardware component burns out (e.g., LEDs, speaker) | 4 | 2 | 8  | Keep spare components and test parts before final assembly |
