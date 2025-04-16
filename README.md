@@ -10,7 +10,7 @@ This repository contains all the development for the course of Integration Works
 
 - Augusto Rosa
 
-- Bruno Zenatti
+- Bruno Zenatti <a href="https://github.com/bzenatti">![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)</a> 
 
 - Fernando Caetano
 
