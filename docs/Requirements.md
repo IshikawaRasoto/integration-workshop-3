@@ -63,7 +63,7 @@
   - **MR07.3**: X quarter note (crotchet) pieces  
 - **MR08**: The board must represent 2 octaves.  
 - **MR09**: The board must include a mechanical structure to hold the webcam and light sources overhead.  
-- **MR10**: The board must be smaller than 1 meter in length to support portability and classroom use.  
+- **MR10**: The board must be smaller than 1.2 meters in length to support portability and classroom use.  
 - **MR11**: The board must include rhythm control functionality.  
 
 ---
