@@ -31,17 +31,24 @@ After selecting **Melody – MElodic LOgic for DYnamic learning** as our officia
 
 ---
 
-### 🗓️ Initial Schedule
+### Initial Schedule
 
 Our starter project timeline here:  
 📌 [Schedule Spreadsheet](https://docs.google.com/spreadsheets/d/1HhtNb4-SCfg7fe9S9xohnO57ZhEAvZ6u02XULvc2ouI/edit?usp=sharing)
 
 ---
 
-### ✅ Requirements
+### Requirements
 
 Detailed functional and non-functional requirements are available:  
 📄 [Requirements Document](https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/docs/Requirements.md)
+
+---
+
+### Risk Analysis
+
+We started risk analysis this week to get a feedback from the professors:
+:bomb:[Risk Analysis Preview ](https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/docs/RiskAnalysis.md)
 
 ---
 
