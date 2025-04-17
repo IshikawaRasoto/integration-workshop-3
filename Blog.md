@@ -10,7 +10,6 @@
 > The more you scroll, older the posts will be.
 
 ## 3rd week (10/04/25 - 16/04/25)
-# 📅 Week 3 Update (10/04/25 - 16/04/25)
 
 After selecting **Melody – MElodic LOgic for DYnamic learning** as our official project last week, our focus shifted towards planning. The main goals of the week included:
 
@@ -21,7 +20,7 @@ After selecting **Melody – MElodic LOgic for DYnamic learning** as our officia
 
 ---
 
-## 🎥 Weekly Video
+### Weekly Video
 
 
 
@@ -32,21 +31,21 @@ After selecting **Melody – MElodic LOgic for DYnamic learning** as our officia
 
 ---
 
-## 🗓️ Initial Schedule
+### 🗓️ Initial Schedule
 
-You can view our full project timeline here:  
+Our starter project timeline here:  
 📌 [Schedule Spreadsheet](https://docs.google.com/spreadsheets/d/1HhtNb4-SCfg7fe9S9xohnO57ZhEAvZ6u02XULvc2ouI/edit?usp=sharing)
 
 ---
 
-## ✅ Requirements
+### ✅ Requirements
 
 Detailed functional and non-functional requirements are available:  
 📄 [Requirements Document](https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/docs/Requirements.md)
 
 ---
 
-## 💰 Bill of Materials (B.O.M.)
+### Bill of Materials (B.O.M.)
 
 | Item                                | Price                   |
 | ----------------------------------- | ----------------------- |
@@ -65,7 +64,7 @@ Detailed functional and non-functional requirements are available:
 
 ---
 
-## 🤝 Weekly Meetings Recap
+### Weekly Meetings Recap
 
 ### Monday (14/04/25) – Electronics & Requirements  
 We kicked off the week by refining the electronic components that will be part of Melody. This included discussions around sensor placement, LED control, feedback mechanisms (vibration, sound), and processing units (ESP32, Raspberry Pi).  
