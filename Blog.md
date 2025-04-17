@@ -15,7 +15,7 @@ In last week's class we defined Melody as our project for the rest of the semest
 
 ### Video of the week
 
-### Schedule
+### [Schedule](https://docs.google.com/spreadsheets/d/1HhtNb4-SCfg7fe9S9xohnO57ZhEAvZ6u02XULvc2ouI/edit?usp=sharing) :calendar:
 
 ### BOM
 
