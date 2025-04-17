@@ -2,7 +2,7 @@
 
 ## Links 🔗
 
-- [Schedule](./docs/Schedule.md) 📆
+- [Schedule](https://docs.google.com/spreadsheets/d/1HhtNb4-SCfg7fe9S9xohnO57ZhEAvZ6u02XULvc2ouI/edit?usp=sharing) :calendar:
 
 - <a href="https://github.com/IshikawaRasoto/integration-workshop-3/tree/main">Project overview</a> 🔍
 
