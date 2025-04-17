@@ -1,7 +1,7 @@
 
-# 4.3 Functional Requirements
+# Functional Requirements
 
-## 4.3.1 Software Requirements
+## Software Requirements
 
 - **FR01**: The system must detect and classify musical notes placed on the board using the webcam.  
 - **FR02**: The system must compare detected notes against the expected melody in guided modes.  
@@ -32,7 +32,7 @@
 
 ---
 
-## 4.3.2 Hardware Requirements
+## Hardware Requirements
 
 - **FR20**: The system must include a Raspberry Pi 4 B as the processing unit.  
 - **FR21**: The system must include a mounted webcam for note detection.  
@@ -49,7 +49,7 @@
 
 ---
 
-# 4.4 Mechanical Requirements
+##  Mechanical Requirements
 
 - **MR01**: The board must be painted or drawn with a blank music sheet layout.  
 - **MR02**: The board must contain 4 measures (compasses), each with 4 tempos, totaling 16 positions.  
@@ -68,7 +68,7 @@
 
 ---
 
-# 4.5 Non-Functional Requirements
+# Non-Functional Requirements
 
 - **NFR01**: The system must perform all image processing locally on the Raspberry Pi 4 B.  
 - **NFR02**: The system must operate reliably under standard indoor lighting conditions.  
@@ -82,7 +82,7 @@
 
 ---
 
-# 4.6 Out-of-Scope Features
+# Out-of-Scope Features
 
 - The system will not teach complete music theory, but will act as a support tool.  
 - The system will not export sheet music or generate real-time scores.  
