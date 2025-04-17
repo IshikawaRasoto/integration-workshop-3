@@ -34,6 +34,7 @@ After selecting **Melody – MElodic LOgic for DYnamic learning** as our officia
 ### Initial Schedule
 
 Our starter project timeline here:  
+
 📌 [Schedule Spreadsheet](https://docs.google.com/spreadsheets/d/1HhtNb4-SCfg7fe9S9xohnO57ZhEAvZ6u02XULvc2ouI/edit?usp=sharing)
 
 ---
@@ -41,6 +42,7 @@ Our starter project timeline here:
 ### Requirements
 
 Detailed functional and non-functional requirements are available:  
+
 📄 [Requirements Document](https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/docs/Requirements.md)
 
 ---
