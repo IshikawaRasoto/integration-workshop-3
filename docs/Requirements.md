@@ -28,7 +28,13 @@
 - **FR16**: The system must provide visual feedback via RGB LEDs based on interaction.  
 - **FR17**: The system must recognize natural (black), flat (blue), and sharp (red) notes based on color detection.  
 - **FR18**: The system must allow choosing the sound set for note playback in default mode.  
-- **FR19**: The application must follow a multi-layered software architecture.  
+- **FR19**: The system must help introduce basic concepts of musical notation, including:  
+  - **FR19.1**: Recognition of the 12 chromatic scale notes (C, C#, D, D#, E, F, F#, G, G#, A, A#, B)  
+  - **FR19.2**: Understanding of note durations (whole, half, quarter)  
+  - **FR19.3**: Formation and recognition of 3-note chords (triads)  
+  - **FR19.4**: Introduction to clefs and octaves  
+  - **FR19.5**: Recognition and understanding of time signatures  
+
 
 ---
 
@@ -73,12 +79,7 @@
 - **NFR01**: The system must perform all image processing locally on the Raspberry Pi 4 B.  
 - **NFR02**: The system must operate reliably under standard indoor lighting conditions.  
 - **NFR03**: The web interface and physical interactions must be intuitive and accessible for children aged 6–12.  
-- **NFR04**: The system must help introduce basic concepts of musical notation, including:  
-  - **NFR04.1**: Recognition of the 12 chromatic scale notes (C, C#, D, D#, E, F, F#, G, G#, A, A#, B)  
-  - **NFR04.2**: Understanding of note durations (whole, half, quarter)  
-  - **NFR04.3**: Formation and recognition of 3-note chords (triads)  
-  - **NFR04.4**: Introduction to clefs and octaves  
-  - **NFR04.5**: Recognition and understanding of time signatures  
+- **NFR04**: The application must follow a multi-layered software architecture.  
 
 ---
 
