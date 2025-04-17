@@ -14,10 +14,9 @@ This repository contains all the development for the course of Integration Works
 
 - Fernando Caetano
 
-- Rogerio Slabiski
+- Rogério Slabiski Melo <a href="https://github.com/rslabiski">![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)</a>
 
 ## Links 🔗
 
-- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/Blog.md">Blog</a> :pencil2:
-
-- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/Schedule.md">Schedule</a>:calendar:
+- [Blog](Blog.md) :pencil2:
+- [Schedule](./docs/Schedule.md) :calendar:

@@ -1,1 +1,0 @@
-# Schedule - Team #6
