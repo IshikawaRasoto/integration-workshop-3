@@ -1,3 +1,6 @@
+> [!NOTE]
+> The mitigation strategy is only a preview, after discussion it will be created the risk response plan.
+
 | ID   | Risk Description | Probability (1–5) | Impact (1–5) | Risk Coefficient (P × I) | Mitigation Strategy (Preview) |
 |------|------------------|-------------------|--------------|--------------------------|---------------------|
 | R01  | PCB manufacturing delay or design mistake | 4 | 4 | 16 | Validate PCB with a breadboard prototype; send design early; use universal board |
@@ -21,6 +24,3 @@
 | R19  | Overbudget due to price changes in components | 1 | 3 | 3  | Change the components to cheaper replacements that are less powerful but works in the project scope |
 | R20  | Team disagreement on feature scope or design | 1 | 2 | 2  | Discuss the changes properly, and have a vote to settle the disagreement |
 | R21  | Power supply is unstable or insufficient | 1 | 1 | 1  | Replace with a more powerful power supply or make it work with batteries |
-
-> [!NOTE]
-> The mitigation strategy is only a preview, after discussion it will be created the risk response plan.
