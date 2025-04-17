@@ -80,6 +80,9 @@
 - **NFR02**: The system must operate reliably under standard indoor lighting conditions.  
 - **NFR03**: The web interface and physical interactions must be intuitive and accessible for children aged 6–12.  
 - **NFR04**: The application must follow a multi-layered software architecture.  
+- **NFR05**: The Raspberry Pi 4 B must run software developed in Python.
+- **NFR06**: The ESP32 microcontroller must run firmware developed in C using the FreeRTOS framework.
+- **NFR07**: The web interface must be implemented using JavaScript.
 
 ---
 
