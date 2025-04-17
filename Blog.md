@@ -48,7 +48,8 @@ Detailed functional and non-functional requirements are available:
 ### Risk Analysis
 
 We started risk analysis this week to get a feedback from the professors:
-:bomb:[Risk Analysis Preview ](https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/docs/RiskAnalysis.md)
+
+:bomb: [Risk Analysis Preview ](https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/docs/RiskAnalysis.md)
 
 ---
 
