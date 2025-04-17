@@ -17,7 +17,7 @@ In last week's class we defined Melody as our project for the rest of the semest
 
 ### [Schedule](https://docs.google.com/spreadsheets/d/1HhtNb4-SCfg7fe9S9xohnO57ZhEAvZ6u02XULvc2ouI/edit?usp=sharing) :calendar:
 
-### [Functional and Non-Functional Requirements]() 
+### [Functional and Non-Functional Requirements](https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/docs/Requirements.md) 
 
 ### BOM
 
