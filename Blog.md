@@ -67,7 +67,9 @@ Detailed functional and non-functional requirements are available:
 ### Weekly Meetings Recap
 
 -Mon (14/04/25): Enhance the electronic part of the project, define the requirements of the project.
+
 -Tue (15/04/25): Plan the project schedule, delegate responsabilities to the project members.
+
 -Wen (16/04/25): Project diagrams, B.O.M,
 
 
