@@ -66,15 +66,10 @@ Detailed functional and non-functional requirements are available:
 
 ### Weekly Meetings Recap
 
-### Monday (14/04/25) – Electronics & Requirements  
-We kicked off the week by refining the electronic components that will be part of Melody. This included discussions around sensor placement, LED control, feedback mechanisms (vibration, sound), and processing units (ESP32, Raspberry Pi).  
-We also formalized both functional and non-functional requirements for the hardware and software involved.
+-Mon (14/04/25): Enhance the electronic part of the project, define the requirements of the project.
+-Tue (15/04/25): Plan the project schedule, delegate responsabilities to the project members.
+-Wen (16/04/25): Project diagrams, B.O.M,
 
-### Tuesday (15/04/25) – Planning & Task Delegation  
-Tuesday was dedicated to organizing the workload. We defined the phases of the project (design, prototyping, testing, integration) and assigned team responsibilities for each part. This division ensures parallel progress across hardware, software, and documentation.
-
-### Wednesday (16/04/25) – Diagrams, B.O.M., and Documentation  
-The team worked on generating the initial system diagrams (e.g., block diagrams, component architecture), finalizing the budget list, and preparing documentation for this week's deliverables. All this content will support our project presentation and future development.
 
 ---
 
