@@ -19,4 +19,4 @@ This repository contains all the development for the course of Integration Works
 ## Links 🔗
 
 - [Blog](Blog.md) :pencil2:
-- [Schedule](./docs/Schedule.md) :calendar:
+- [Schedule](https://docs.google.com/spreadsheets/d/1HhtNb4-SCfg7fe9S9xohnO57ZhEAvZ6u02XULvc2ouI/edit?usp=sharing) :calendar:
