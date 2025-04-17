@@ -22,7 +22,7 @@ After selecting **Melody – MElodic LOgic for DYnamic learning** as our officia
 
 ### Weekly Video
 
-
+https://github.com/user-attachments/assets/63315553-2686-44ac-ae38-a748cd99c074
 
 - Project overview
 - Requirements (hardware/software)
