@@ -34,24 +34,25 @@
   - **FR19.3**: Formation and recognition of 3-note chords (triads)  
   - **FR19.4**: Introduction to clefs and octaves  
   - **FR19.5**: Recognition and understanding of time signatures  
+- **FR20**: The system must provide an accessibility mode for blind users, combining audio cues with tactile feedback (vibrations) to support interaction and navigation.
 
 
 ---
 
 ## Hardware Requirements
 
-- **FR20**: The system must include a Raspberry Pi 4 B as the processing unit.  
-- **FR21**: The system must include a mounted webcam for note detection.  
-- **FR22**: The system must include two light sources for consistent image capture.  
-- **FR23**: The system must include a speaker to output audio for feedback and playback.  
-- **FR24**: The system must have physical buttons for:  
-  - **FR24.1**: Volume up  
-  - **FR24.2**: Volume down  
-  - **FR24.3**: Frequency up  
-  - **FR24.4**: Frequency down  
-  - **FR24.5**: Play  
-  - **FR24.6**: Stop  
-- **FR25**: The system must have a stable power supply for all components.  
+- **FR21**: The system must include a Raspberry Pi 4 B as the processing unit.  
+- **FR22**: The system must include a mounted webcam for note detection.  
+- **FR23**: The system must include two light sources for consistent image capture.  
+- **FR24**: The system must include a speaker to output audio for feedback and playback.  
+- **FR25**: The system must have physical buttons for:  
+  - **FR25.1**: Volume up  
+  - **FR25.2**: Volume down  
+  - **FR25.3**: Frequency up  
+  - **FR25.4**: Frequency down  
+  - **FR25.5**: Play  
+  - **FR25.6**: Stop  
+- **FR26**: The system must have a stable power supply for all components.  
 
 ---
 
@@ -92,3 +93,4 @@
 - The system will not export sheet music or generate real-time scores.  
 - The system will not include internet/cloud-based services.  
 - The system will not support multiplayer or simultaneous multi-user interaction.  
+
