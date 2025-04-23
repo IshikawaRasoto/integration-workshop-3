@@ -6,7 +6,7 @@ This repository contains all the development of project Melody for the course of
 
 - [Project Overview](Melody.md) 🎵
 - [Blog](Blog.md) :pencil2:
-- [Schedule](https://docs.google.com/spreadsheets/d/1HhtNb4-SCfg7fe9S9xohnO57ZhEAvZ6u02XULvc2ouI/edit?usp=sharing) :calendar:
+- [Schedule](https://docs.google.com/spreadsheets/d/1K51avpQig4mYJVM0eIMD89h_2f8xq5VL/edit?usp=sharing&ouid=108155820748050682927&rtpof=true&sd=true) :calendar:
 
 ## Members
 
