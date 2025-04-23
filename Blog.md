@@ -2,7 +2,7 @@
 
 ## Links 🔗
 
-- [Schedule](https://docs.google.com/spreadsheets/d/1HhtNb4-SCfg7fe9S9xohnO57ZhEAvZ6u02XULvc2ouI/edit?usp=sharing) :calendar:
+- [Schedule](https://docs.google.com/spreadsheets/d/1K51avpQig4mYJVM0eIMD89h_2f8xq5VL/edit?usp=sharing&ouid=108155820748050682927&rtpof=true&sd=true) :calendar:
 
 - <a href="https://github.com/IshikawaRasoto/integration-workshop-3/tree/main">Project overview</a> 🔍
 
@@ -35,7 +35,7 @@ https://github.com/user-attachments/assets/63315553-2686-44ac-ae38-a748cd99c074
 
 Our starter project timeline here:  
 
-📌 [Schedule Spreadsheet](https://docs.google.com/spreadsheets/d/1HhtNb4-SCfg7fe9S9xohnO57ZhEAvZ6u02XULvc2ouI/edit?usp=sharing)
+📌 [Schedule Spreadsheet](https://docs.google.com/spreadsheets/d/1K51avpQig4mYJVM0eIMD89h_2f8xq5VL/edit?usp=sharing&ouid=108155820748050682927&rtpof=true&sd=true)
 
 ---
 
