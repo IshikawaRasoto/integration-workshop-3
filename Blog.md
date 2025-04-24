@@ -13,9 +13,9 @@
 
 This Week we worked on the planning of the project. As such, we:
 
--Defined the functional and non-functional requirements
--Defined the schedule of the project
--Propose the mitigation tasks for the top 10 priority risks of the project.
+- Defined the functional and non-functional requirements
+- Defined the schedule of the project
+- Propose the mitigation tasks for the top 10 priority risks of the project.
 
 ### Weekly Video
 
