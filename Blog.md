@@ -6,6 +6,8 @@
 
 - [Requirements](https://docs.google.com/spreadsheets/d/1Q6yNXRD3ya6egxgR8T8BPecmGC_VNlykp1QTv5MUk90/edit?usp=sharing) ✔️
 
+- [Risk Analysis](https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/docs/RiskAnalysis.md) 
+
 - <a href="https://github.com/IshikawaRasoto/integration-workshop-3/tree/main">Project overview</a> 🔍
 
 > [!NOTE]
