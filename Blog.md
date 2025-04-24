@@ -13,6 +13,8 @@
 
 ## 4th week (17/04/25 - 24/04/25)
 
+https://github.com/user-attachments/assets/338b94e7-9b9c-4a17-a485-34453e6bfb96
+
 This Week we worked on the planning of the project. As such, we:
 
 - Defined the functional and non-functional requirements
