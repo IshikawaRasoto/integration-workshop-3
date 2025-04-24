@@ -4,12 +4,14 @@
 
 - [Schedule](https://docs.google.com/spreadsheets/d/1K51avpQig4mYJVM0eIMD89h_2f8xq5VL/edit?usp=sharing&ouid=108155820748050682927&rtpof=true&sd=true) :calendar:
 
+- [Requirements](https://docs.google.com/spreadsheets/d/1Q6yNXRD3ya6egxgR8T8BPecmGC_VNlykp1QTv5MUk90/edit?usp=sharing) ✔️
+
 - <a href="https://github.com/IshikawaRasoto/integration-workshop-3/tree/main">Project overview</a> 🔍
 
 > [!NOTE]
 > The more you scroll, older the posts will be.
 
-## 4rd week (17/04/25 - 24/04/25)
+## 4th week (17/04/25 - 24/04/25)
 
 This Week we worked on the planning of the project. As such, we:
 
