@@ -15,6 +15,9 @@
 
 https://github.com/user-attachments/assets/338b94e7-9b9c-4a17-a485-34453e6bfb96
 
+> [!NOTE]
+> If the video doesn't work, here is the <a href="https://drive.google.com/file/d/1DF5MuI8baSHS0etINNkh2YdKUNlma0PU/view?usp=sharing">alternative link</a>
+
 This Week we worked on the planning of the project. As such, we:
 
 - Defined the functional and non-functional requirements
