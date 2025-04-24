@@ -9,6 +9,17 @@
 > [!NOTE]
 > The more you scroll, older the posts will be.
 
+## 4rd week (17/04/25 - 24/04/25)
+
+This Week we worked on the planning of the project. As such, we:
+
+-Defined the functional and non-functional requirements
+-Defined the schedule of the project
+-Propose the mitigation tasks for the top 10 priority risks of the project.
+
+### Weekly Video
+
+
 ## 3rd week (10/04/25 - 16/04/25)
 
 After selecting **Melody – MElodic LOgic for DYnamic learning** as our official project last week, our focus shifted towards planning. The main goals of the week included:
