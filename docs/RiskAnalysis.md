@@ -1,6 +1,3 @@
-> [!NOTE]
-> The mitigation strategy is only a preview, after discussion it will be created the risk response plan.
-
 | ID   | Risk Name | Impact (1–5) | Probability (1–5) | I × P (1–25) | Risk Response Plan | Re-evaluated Impact (Ir) | Re-evaluated Probability (Pr) | Ir × Pr (1–25) |
 |------|-----------|--------------|--------------------|--------------|---------------------|---------------------------|-------------------------------|----------------|
 | R01  | PCB manufacturing delay or design mistake | 4 | 4 | 16 | [See Plan](./risk_response_plans/RiskID1.pdf) | 2 | 2 | 4 |
