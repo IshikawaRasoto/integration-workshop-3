@@ -8,8 +8,8 @@
 - FR04: The system must play audio notes corresponding to the notes positioned on the board.  
 - FR05: The system must support three operational modes:  
   - FR5.1: Creation mode (free composition and looped playback)  
-  - FR5.2: Identification mode (notation-based guided input with 2 preloaded melodies)  
-  - FR5.3: Guess the Note mode (sound-based input with 3 preloaded melodies)  
+  - FR5.2: "Identify the Note" mode, in which the teacher tells a note name to the student and position it on the board 
+  - FR5.3: "Guess the Note" mode, in which the student hears a note and position it on the board 
 - FR06: The system must continuously play a looping melody based on the placed notes in "Creation" mode.  
 - FR07: The system must allow the user to control volume and tempo (pacing) through physical buttons.  
 - FR08: The system must allow the user to control volume and tempo through the web interface.  
@@ -36,8 +36,10 @@
 - FR23: Melody must allow the teacher to control the system through a web application  
   - FR23.1: The teacher can choose the mode on the web interface.
   - FR23.2: There should be a page for each mode
-  - FR23.3: Every page can control volume, play, pause and tempo.
-  - FR23.4: The initial page is a stand-by mode for the teacher choose the operational mode.
+  - FR23.3: Every page should be able to control volume, play and pause.
+  - FR23.4: The Creation mode page should also be able to control temporization.
+  - FR23.5: The Identify and Guess the note pages should ask for the note to be played.
+  - FR23.6: The initial page is a stand-by mode for the teacher choose the operational mode.
 
 ---
 
@@ -74,11 +76,12 @@
 - FR44: Melody must allow the student to place musical notes on a blank musical sheet  
 - FR45: Melody must have a visual interface with buttons and LEDs on the board for the user.  
 - FR46: Melody must have sound interface for the teacher and student  
-- FR47: Melody must be carreable  
+- FR47: Melody must be carreable  **1.2 meters width and 1 meter height, is it carreable?**
 - FR48: Melody must have an accessibility module for blind people  
   - FR48.1: The accessibility module must be detachable from the main board  
   - FR48.2: The accessibility module must have a touchable interface  
   - FR48.3: The accessibility module should have a vibrating interface  
+- FR49: The printed notes must be smaller than **define its size** in width and **Y** in height.  
 
 ---
 
