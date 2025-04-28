@@ -2,9 +2,9 @@
 
 ## Links 🔗
 
-- [Schedule](https://docs.google.com/spreadsheets/d/16A-HO4trwWP6x0k8ewTypzMnL9SxRsMCpMscsaBmjHI/edit?usp=sharing) :calendar:
+- [Schedule](https://docs.google.com/spreadsheets/d/16BKpbmt_EArwLnEZPB5oZgRN8s5iP5gV15BQ9Iq-7wM/edit?usp=sharing) :calendar:
 
-- [Requirements](https://docs.google.com/spreadsheets/d/1Q6yNXRD3ya6egxgR8T8BPecmGC_VNlykp1QTv5MUk90/edit?usp=sharing) ✔️
+- [Requirements](https://docs.google.com/spreadsheets/d/1uYC0gMrYfBv8li1KcnDvk5HJS1G1zU4XR2CenMT3GNY/edit?usp=sharing) ✔️
 
 - [Risk Analysis](https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/docs/RiskAnalysis.md) 
 
