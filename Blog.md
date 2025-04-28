@@ -6,7 +6,7 @@
 
 - [Requirements](https://docs.google.com/spreadsheets/d/1uYC0gMrYfBv8li1KcnDvk5HJS1G1zU4XR2CenMT3GNY/edit?usp=sharing) ✔️
 
-- [Risk Analysis](https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/docs/RiskAnalysis.md) 
+- [Risk Analysis](./docs/RiskAnalysis.md)
 
 - [Project Review](./Melody.md) 🔍
 
