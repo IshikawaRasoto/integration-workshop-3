@@ -2,9 +2,13 @@
 
 ## Links 🔗
 
-- [Risk Analysis](./docs/RiskAnalysis.md)
-
 - [Project Review](./Melody.md) 🔍
+  
+- [Schedule](https://docs.google.com/spreadsheets/d/16BKpbmt_EArwLnEZPB5oZgRN8s5iP5gV15BQ9Iq-7wM/edit?usp=sharing) :calendar:
+  
+- [Requirements](https://docs.google.com/spreadsheets/d/1uYC0gMrYfBv8li1KcnDvk5HJS1G1zU4XR2CenMT3GNY/edit?usp=sharing) ✔️
+
+- [Risk Analysis](./docs/RiskAnalysis.md) 
 
 > [!NOTE]
 > The more you scroll, older the posts will be.
