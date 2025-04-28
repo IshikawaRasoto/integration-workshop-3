@@ -15,10 +15,10 @@ This repository contains all the development of project Melody for the course of
 
 - Nicolas Riuichi Oda <a href="https://github.com/Awesteads">![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)</a>
 
-- Augusto Rosa
+- Augusto Rosa <a href="https://github.com/AugustodeORosa">![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)</a> 
 
 - Bruno Zenatti <a href="https://github.com/bzenatti">![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)</a> 
 
-- Fernando Caetano
+- Fernando Caetano <a href="https://github.com/ratatusznei">![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)</a> 
 
 - Rogério Slabiski Melo <a href="https://github.com/rslabiski">![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)</a>
