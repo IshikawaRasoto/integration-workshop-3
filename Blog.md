@@ -8,7 +8,7 @@
 
 - [Risk Analysis](https://github.com/IshikawaRasoto/integration-workshop-3/blob/main/docs/RiskAnalysis.md) 
 
-- <a href="https://github.com/IshikawaRasoto/integration-workshop-3/tree/main">Project overview</a> 🔍
+- [Project Review](./Melody.md) 🔍
 
 > [!NOTE]
 > The more you scroll, older the posts will be.
