@@ -8,7 +8,7 @@
   
 - [Requirements](https://docs.google.com/spreadsheets/d/1uYC0gMrYfBv8li1KcnDvk5HJS1G1zU4XR2CenMT3GNY/edit?usp=sharing) ✔️
 
-- [Risk Analysis](./docs/RiskAnalysis.md) 
+- [Risk Analysis](https://docs.google.com/document/d/1Hm508SiW-laHHYEpOHIg4PhOxUlGecafFV3NObWFzSE/edit?usp=sharing) 
 
 > [!NOTE]
 > The more you scroll, older the posts will be.
