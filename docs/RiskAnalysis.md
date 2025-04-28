@@ -9,9 +9,10 @@
 | R07  | Power supply is unstable or insufficient | 3 | 3 | 9  | [See Plan](./risk_response_plans/RiskID7.pdf) | 2 | 2 | 4 |
 | R08  | Wifi doesn't work in the UTFPR | 2 | 4 | 8  | [See Plan](./risk_response_plans/RiskID8.pdf) | 1 | 4 | 4 |
 | R09  | Hardware component burns out (e.g., LEDs, speaker) | 4 | 2 | 8  | [See Plan](./risk_response_plans/RiskID9.pdf) | 2 | 2 | 4 |
-| R10  | Camera wobbling | 2 | 4 | 8  | [See Plan](./risk_response_plans/RiskID10.pdf) | 3 | 2 | 6 |
-| R11  | Electronic design error | 4 | 2 | 8  | - | - | - | - |
-| R12  | One or more modes fail to work as expected | 4 | 2 | 8  | - | - | - | - |
-| R13  | Webcam image quality is insufficient for note detection | 4 | 2 | 8  | - | - | - | - |
-| R14  | Raspberry Pi burns out | 5 | 1 | 5  | - | - | - | - |
-| R15  | Delays in delivery of components | 2 | 2 | 4  | - | - | - | - |
+| R10  | Camera wobbling | 4 | 2 | 12  | [See Plan](./risk_response_plans/RiskID10.pdf) | 3 | 2 | 6 |
+| R11  | Electronic design error | 3 | 2 | 6  | - | - | - | - |
+| R12  | One or more modes fail to work as expected | 3 | 2 | 6  | - | - | - | - |
+| R13  | Three members or more give up| 5 | 1 | 5  | - | - | - | - |
+| R14  | Webcam image quality is insufficient for note detection | 4 | 1 | 4  | - | - | - | - |
+| R15  | Fire at the university | 3 | 1 | 3  | - | - | - | - |
+| R16  | Delays in delivery of components | 1 | 2 | 2  | - | - | - | - |
