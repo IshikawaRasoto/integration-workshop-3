@@ -61,8 +61,7 @@ The third mode will be similar to the second one, it will also want the children
 
 ## Meeting with Professor Ellen Carolina Ott - CAART 🎻💬
 
-A meeting was done with professor Ott to present our project and ask for her opinion. She stated that the project was spectacular and she has been trying to find a project with these characteristics for years. Even abroad she didn't find anything like ours. She suggested to implement more colors and different notes tempos. Ms. Ott thinks that the project is great, and it would have a really meaningful impact in the way that music teachers interact with their students.![MelodyDiagram](https://github.com/user-attachments/assets/71ade737-0b30-436b-bae9-3b95a5038bfd)
-
+A meeting was done with professor Ott to present our project and ask for her opinion. She stated that the project was spectacular and she has been trying to find a project with these characteristics for years. Even abroad she didn't find anything like ours. She suggested to implement more colors and different notes tempos. Ms. Ott thinks that the project is great, and it would have a really meaningful impact in the way that music teachers interact with their students.
 
 ## Components 📷
 
