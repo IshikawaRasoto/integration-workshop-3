@@ -10,7 +10,9 @@
 
 - [Risk Analysis](./docs/ProjectRisks.md)
 
-- [Risk Response Plans](https://docs.google.com/document/d/1Hm508SiW-laHHYEpOHIg4PhOxUlGecafFV3NObWFzSE/edit?usp=sharing) 
+- [Risk Response Plans](https://docs.google.com/document/d/1Hm508SiW-laHHYEpOHIg4PhOxUlGecafFV3NObWFzSE/edit?usp=sharing)
+
+- [Budget](./docs/Budget.md)
 
 > [!NOTE]
 > The more you scroll, older the posts will be.
