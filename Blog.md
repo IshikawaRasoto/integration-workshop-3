@@ -15,6 +15,17 @@
 > [!NOTE]
 > The more you scroll, older the posts will be.
 
+## 5th week (25/04/25 - 01/05/25)
+
+https://drive.google.com/file/d/171ncvKebdySRcL43Z6NbSYb8b0LnE4rA/view?usp=sharing
+
+> [!NOTE]
+> video doesn't work, here is the <a href="https://drive.google.com/file/d/171ncvKebdySRcL43Z6NbSYb8b0LnE4rA/view?usp=sharing">alternative link</a>
+
+This week we worked on modeling the mechanical part of Melody.
+
+---
+
 ## 4th week (17/04/25 - 24/04/25)
 
 https://github.com/user-attachments/assets/338b94e7-9b9c-4a17-a485-34453e6bfb96
