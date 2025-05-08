@@ -17,6 +17,13 @@
 > [!NOTE]
 > The more you scroll, older the posts will be.
 
+## 6th week (02/05/25 - 09/05/25)
+
+https://github.com/user-attachments/assets/304e5314-0793-4925-b9ff-8a7de1e51dcb
+
+> [!NOTE]
+> video doesn't work, here is the <a href="https://drive.google.com/file/d/11PbM4jwNMG-VzaX_eZv_z7f3hip6sJxV/view?usp=drive_link">alternative link</a>
+
 ## 5th week (25/04/25 - 01/05/25)
 
 https://drive.google.com/file/d/171ncvKebdySRcL43Z6NbSYb8b0LnE4rA/view?usp=sharing
