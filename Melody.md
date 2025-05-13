@@ -25,7 +25,8 @@ The third mode will be similar to the second one, it will also want the children
 
 ## Initial specifications ✔️
 
-![image](https://github.com/user-attachments/assets/32730bdb-0779-461f-88f8-021705e767b6)
+![image](https://github.com/user-attachments/assets/c3374257-c61f-4539-9866-ac6e9b72b002)
+
 
 ### Board Specs 📐
 
