@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Identify the Note</title>
+  <link rel="stylesheet" href="identifyNote.css">
+</head>
+
+<body>
+  <div class="screen">
+    <button class="back-button" onclick="goBack()">← Back</button>
+    
+    <!-- Musical note display -->
+    <div class="note-display">C#</div>
+    
+    <!-- Spacer to push footer to bottom -->
+    <div class="content-spacer"></div>
+
+    <footer>
+      <div class="playback-controls">
+        <button class="play-button" onclick="play()">▶ Play</button>
+        <button class="stop-button" onclick="stop()">🚫 Stop</button>
+      </div>
+
+      <div class="music-select-container">
+        <select id="musicSelect" onchange="selectMusic()">
+          <option value="none" disabled selected>Select Music</option>
+          <option value="Musica 1">Musica 1</option>
+          <option value="Musica 2">Musica 2</option>
+          <option value="Musica 3">Musica 3</option>
+        </select>
+      </div>
+
+      <div class="controls">
+        <div class="control-column">
+          <div class="value-display" id="volumeDisplay">🔊 50%</div>
+          <button id="volUpBtn">Volume +</button>
+          <button id="volDownBtn">Volume -</button>
+        </div>
+      </div>
+
+      <div class="footer-text">Identify the Note</div>
+    </footer>
+  </div>
+
+  <script src="identifyNote.js"></script>
+</body>
+</html>

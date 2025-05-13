@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creation Mode - Melody</title>
+  <link rel="stylesheet" href="creationMode.css">
+</head>
+
+<body>
+  <div class="screen">
+    <button class="back-button" onclick="goBack()">← Back</button>
+    
+    <!-- Added logo container -->
+    <div class="logo-container">
+      <img src="../logo-semBG.png" alt="Melody Logo" class="logo">
+    </div>
+    
+    <!-- Spacer to push footer to bottom -->
+    <div class="content-spacer"></div>
+
+    <footer>
+      <div class="playback-controls">
+        <button onclick="play()">▶ Play</button>
+        <button onclick="stop()">🚫 Stop</button>
+      </div>
+
+      <div class="controls">
+        <div class="control-column">
+          <div class="value-display" id="volumeDisplay">🔊 50%</div>
+          <button id="volUpBtn">Volume +</button>
+          <button id="volDownBtn">Volume -</button>
+        </div>
+        <div class="control-column">
+          <div class="value-display" id="tempDisplay">60 BPM</div>
+          <button onclick="changeTempo(30)">Tempo +</button>
+          <button onclick="changeTempo(-30)">Tempo -</button>
+        </div>
+      </div>
+
+      <div class="footer-text">Creation Mode</div>
+    </footer>
+  </div>
+
+  <script src="creationMode.js"></script>
+</body>
+</html>

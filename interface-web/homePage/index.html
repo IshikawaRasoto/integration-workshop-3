@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Melody</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="screen">
+    <h1 class="title">Melody</h1>
+    
+    <div class="menu-container">
+      <button class="menu-button" onclick="navigateTo('creation')">Creation Mode</button>
+      <button class="menu-button" onclick="navigateTo('hear')">Hear the Note</button>
+      <button class="menu-button" onclick="navigateTo('identify')">Identify the Note</button>
+    </div>
+    
+    <button class="help-button" onclick="showTutorial()">?</button>
+    
+    <div class="tutorial-overlay" id="tutorialOverlay">
+      <div class="tutorial-container">
+        <h2 class="tutorial-title">Melody</h2>
+        <p class="tutorial-text">
+          <strong>Creation Mode:</strong> Crie músicas onde a imaginação da criança a levar<br><br>
+          <strong>Hear the Note:</strong> Assimile a nota ouvida com sua representação na partitura. No final, escute a melodia.<br><br>
+          <strong>Identify the Note:</strong> Assimile a nota escrita com sua representação na partitura. No final, escute a melodia.
+        </p>
+        <button class="tutorial-close" onclick="hideTutorial()">Entendi!</button>
+      </div>
+    </div>
+    
+    <div class="footer-text">Melody App v1.0</div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
