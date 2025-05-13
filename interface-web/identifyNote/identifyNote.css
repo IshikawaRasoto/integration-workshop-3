@@ -1,171 +1,34 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #6c63ff, #a1c4fd);
-  color: #fff;
-}
-
+/* Override screen justification */
 .screen {
-  width: 350px;
-  height: 600px;
-  background-color: #202124;
-  border-radius: 25px;
-  padding: 20px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
-  position: relative;
-
-  /* push footer to the bottom */
-  display: flex;
-  flex-direction: column;
+  justify-content: flex-start; /* Override the flex-end from common.css */
 }
 
-.back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #ff6347;
-  padding: 8px 15px;
-  font-size: 14px;
-  width: auto;
-  border: none;
-  border-radius: 12px;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* Note display */
+/* Note display specific styling */
 .note-display {
   margin-top: 80px;
   text-align: center;
-  font-size: 72px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 0 0 15px rgba(108, 99, 255, 0.7);
   margin-bottom: 40px;
 }
 
-/* Content spacer */
-.content-spacer {
-  flex-grow: 1;
-}
-
-/* FOOTER PANEL */
-footer {
-  width: 100%;
-  background-color: #282d31;
-  border-radius: 15px 15px 25px 25px;
-  padding: 15px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-/* Play / Stop inside footer */
-.playback-controls {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  width: 100%;
-}
-
-.music-select-container {
-  width: 100%;
-}
-
-.music-select-container select {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 10px;
-  border: none;
-  color: #333;
-  outline: none;
-  cursor: pointer;
-}
-
+/* Override controls layout */
 .controls {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: center; /* Override space-between from common.css */
 }
 
 .control-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 60%;
+  width: 60%; /* Override 48% from common.css */
 }
 
-.value-display {
-  background-color: #333;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  padding: 10px;
-  border-radius: 10px;
-  width: 100%;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-button {
-  background-color: #6c63ff;
-  border: none;
-  border-radius: 12px;
-  color: #fff;
-  padding: 12px 25px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  user-select: none;
-  -webkit-user-select: none;
-}
-button:hover {
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
-}
-button:focus {
-  outline: 2px solid #fff;
-}
+/* Override button active state behavior */
 button:active {
-  filter: brightness(90%);
+  filter: brightness(90%); /* Override background-color change from common.css */
 }
 
-/* New styles for play and stop buttons */
-.play-button {
-  background-color: #4CAF50; /* Green */
-}
-.play-button:hover {
-  background-color: #5fd363;
-}
+/* Override play/stop button active states to match this page's behavior */
 .play-button:active {
   background-color: #3d8b40;
 }
 
-.stop-button {
-  background-color: #f44336; /* Red */
-}
-.stop-button:hover {
-  background-color: #ff5c4e;
-}
 .stop-button:active {
   background-color: #d32f2f;
-}
-
-.footer-text {
-  font-size: 14px;
-  color: #ccc;
 }
