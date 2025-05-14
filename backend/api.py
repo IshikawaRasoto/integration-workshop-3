@@ -64,48 +64,6 @@ async def root():
 # 3. WebSocket route
 @app.websocket("/ws")
 async def websocket_endpoint(ws: WebSocket):
-    await manager.connect(ws)
-    try:
-        while True:
-            data = await ws.receive_json()
-            # Expect {"action": "...", "value": ...}
-            action = data.get("action")
-            value = data.get("value")
-
-            if action == "set_volume":
-                set_volume(int(value))
-            elif action == "set_tempo":
-                set_tempo(int(value))
-            elif action == "start":
-                start_playback()
-            elif action == "stop":
-                stop_playback()
-            elif action == "select_melody":
-                select_melody(str(value))
-            elif action == "set_page":      
-                set_page(str(value)) 
-            else:
-                # unknown action 
-                pass
-
-            await manager.broadcast_state()
-
-    except (WebSocketDisconnect, RuntimeError):
-        manager.disconnect(ws)
-
-@app.get("/creation")
-async def creation_redirect():
-    return RedirectResponse(url="/static/creationMode/creationMode.html")
-
-@app.get("/hear")
-async def hear_redirect():
-    return RedirectResponse(url="/static/hearNote/hearNote.html")
-
-@app.get("/identify")
-async def identify_redirect():
-    return RedirectResponse(url="/static/identifyNote/identifyNote.html")
-
-async def websocket_endpoint(ws: WebSocket):
     await manager.connect(ws)          
     try:
         while True:
@@ -129,3 +87,15 @@ async def websocket_endpoint(ws: WebSocket):
     except Exception as e:
         print(f"WebSocket error: {e}")
         manager.disconnect(ws)
+
+@app.get("/creation")
+async def creation_redirect():
+    return RedirectResponse(url="/static/creationMode/creationMode.html")
+
+@app.get("/hear")
+async def hear_redirect():
+    return RedirectResponse(url="/static/hearNote/hearNote.html")
+
+@app.get("/identify")
+async def identify_redirect():
+    return RedirectResponse(url="/static/identifyNote/identifyNote.html")
