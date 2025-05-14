@@ -17,6 +17,33 @@
 > [!NOTE]
 > The more you scroll, older the posts will be.
 
+## 7th week (10/05/25 - 15/05/25)
+
+### Weekly Progress Report
+
+- **Worked Hours:** 39  
+- **Estimated Hours:** 51  
+
+#### Late Tasks:
+- Painting the table (musical sheet)  
+- Universal board  
+- Assembly of camera support and accessibility box  
+- Technical drawing of the camera support  
+**Total:** 24 hours
+
+#### Advanced Tasks:
+- Web interface  
+- Implementation of the API between the Raspberry Pi and the web interface  
+- Software flowchart  
+**Total:** 15 hours
+
+### Balance of Hours:
+- **-9 hours (Delayed)**
+
+### Considerations:
+The machine responsible for laser cutting was inoperable this week due to a lack of distilled water. As a result, the camera support and accessibility box could not be completed. Painting the table is not a time-sensitive task, so it was postponed.
+
+
 ## 6th week (02/05/25 - 09/05/25)
 
 https://github.com/user-attachments/assets/304e5314-0793-4925-b9ff-8a7de1e51dcb
