@@ -1,25 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // All initialization code would go here if needed
-});
-
 function navigateTo(page) {
-  // In a real app, this would navigate to different pages
-  switch(page) {
-    case 'creation':
-      window.location.href = 'creation.html';
-      break;
-    case 'hear':
-      window.location.href = 'hearNote.html';
-      break;
-    case 'identify':
-      window.location.href = 'identifyNote.html';
-      break;
-    default:
-      console.error('Unknown page:', page);
+  window.location.href = pageUrl(page);
+}
+
+// server-side routes: /creation, /hear, /identify
+function pageUrl(name) {
+  switch (name) {
+    case 'creation': return '/creation';
+    case 'hear':     return '/hear';
+    case 'identify': return '/identify';
+    default:         return '/';
   }
-  
-  // For now, just show an alert
-  alert(`Navigating to ${page} mode...`);
 }
 
 function showTutorial() {

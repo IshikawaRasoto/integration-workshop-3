@@ -14,10 +14,8 @@ function changeTempo(d) {
 function play() { alert('Playing…'); }
 function stop() { alert('Stopped.'); }
 
-function goBack() { 
-  // In a real app, this would navigate back to home page
-  // For example: window.location.href = 'index.html';
-  alert('Going back…'); 
+function goBack() {
+  window.location.href = '/';   
 }
 
 // Set up event listeners when the DOM is fully loaded

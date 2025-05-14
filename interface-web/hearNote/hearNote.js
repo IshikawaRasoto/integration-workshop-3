@@ -77,13 +77,10 @@ function selectMusic() {
   alert(`You selected: ${document.getElementById('musicSelect').value}`);
 }
 
-function goBack() { 
-  // In a real app, this would navigate back to home page
-  // For example: window.location.href = 'index.html';
-  alert('Going back…'); 
+function goBack() {
+  window.location.href = '/';   
 }
 
-// Function to play the C# note
 function playNote() {
   // Initialize audio context if not already created
   console.log("Playing");
