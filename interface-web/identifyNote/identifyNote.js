@@ -1,77 +1,52 @@
-let volume = 50;
 let holdTimer = null;
 
-// Set up event listeners when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Setup for volume up button
-  const volUpBtn = document.getElementById('volUpBtn');
-  volUpBtn.addEventListener('mousedown', function() {
-    changeVolume(5); // Immediate change
-    holdTimer = setInterval(() => changeVolume(5), 250); // Change every 250ms
-  });
-  
-  volUpBtn.addEventListener('mouseup', function() {
-    clearInterval(holdTimer);
-  });
-  
-  volUpBtn.addEventListener('mouseleave', function() {
-    clearInterval(holdTimer);
-  });
-  
-  // Setup for volume down button
-  const volDownBtn = document.getElementById('volDownBtn');
-  volDownBtn.addEventListener('mousedown', function() {
-    changeVolume(-5); // Immediate change
-    holdTimer = setInterval(() => changeVolume(-5), 250); // Change every 250ms
-  });
-  
-  volDownBtn.addEventListener('mouseup', function() {
-    clearInterval(holdTimer);
-  });
-  
-  volDownBtn.addEventListener('mouseleave', function() {
-    clearInterval(holdTimer);
-  });
-  
-  // Touch support for mobile devices
-  volUpBtn.addEventListener('touchstart', function(e) {
-    e.preventDefault(); // Prevent default touch behavior
-    changeVolume(5);
-    holdTimer = setInterval(() => changeVolume(5), 250);
-  });
-  
-  volUpBtn.addEventListener('touchend', function() {
-    clearInterval(holdTimer);
-  });
-  
-  volDownBtn.addEventListener('touchstart', function(e) {
-    e.preventDefault();
-    changeVolume(-5);
-    holdTimer = setInterval(() => changeVolume(-5), 250);
-  });
-  
-  volDownBtn.addEventListener('touchend', function() {
-    clearInterval(holdTimer);
-  });
+document.addEventListener('DOMContentLoaded', () => {
+
+    const volUp   = document.getElementById('volUpBtn');
+    const volDown = document.getElementById('volDownBtn');
+
+    const startHold = step => {
+        changeVolume(step);                   // immediate tick
+        holdTimer = setInterval(() => changeVolume(step), 250);
+    };
+    const stopHold  = () => clearInterval(holdTimer);
+
+    volUp  .addEventListener('mousedown', () => startHold(+5));
+    volUp  .addEventListener('mouseup',   stopHold);
+    volUp  .addEventListener('mouseleave',stopHold);
+
+    volDown.addEventListener('mousedown', () => startHold(-5));
+    volDown.addEventListener('mouseup',   stopHold);
+    volDown.addEventListener('mouseleave',stopHold);
+
+    volUp  .addEventListener('touchstart', e => { e.preventDefault(); startHold(+5); });
+    volUp  .addEventListener('touchend',   stopHold);
+
+    volDown.addEventListener('touchstart', e => { e.preventDefault(); startHold(-5); });
+    volDown.addEventListener('touchend',   stopHold);
+
+    document.getElementById('musicSelect')
+            .addEventListener('change', selectMusic);
+
+    document.getElementById('playBtn')?.addEventListener('click', play);
+    document.getElementById('stopBtn')?.addEventListener('click', stop);
 });
 
-function changeVolume(d) {
-  volume = Math.max(0, Math.min(100, volume + d));
-  document.getElementById('volumeDisplay').textContent = `🔊 ${volume}%`;
+function changeVolume(delta) {
+    const current = latestState.volume ?? 50;
+    const newVol  = Math.max(0, Math.min(100, current + delta));
+    sendAction('set_volume', newVol);
 }
 
-function play() { 
-  alert('Playing…');
-}
-
-function stop() { 
-  alert('Stopped.'); 
-}
+function play()            { sendAction('start'); }
+function stop()            { sendAction('stop');  }
 
 function selectMusic() {
-  alert(`You selected: ${document.getElementById('musicSelect').value}`);
+    const melody = document.getElementById('musicSelect').value;
+    sendAction('select_melody', melody);
 }
 
-function goBack() {
-  window.location.href = '/';  
+function goBack() { 
+  sendAction('set_page', 'home'); 
+  window.location.href = '/';   
 }

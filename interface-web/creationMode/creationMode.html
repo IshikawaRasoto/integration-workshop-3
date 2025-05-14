@@ -22,8 +22,8 @@
 
     <footer>
       <div class="playback-controls">
-        <button onclick="play()">▶ Play</button>
-        <button onclick="stop()">🚫 Stop</button>
+        <button id="playBtn">▶ Play</button>
+        <button id="stopBtn">🚫 Stop</button>
       </div>
 
       <div class="controls">
@@ -34,8 +34,8 @@
         </div>
         <div class="control-column">
           <div class="value-display" id="tempDisplay">60 BPM</div>
-          <button onclick="changeTempo(30)">Tempo +</button>
-          <button onclick="changeTempo(-30)">Tempo -</button>
+          <button id="tempUpBtn">Tempo +</button>
+          <button id="tempDownBtn">Tempo -</button>
         </div>
       </div>
 
@@ -43,6 +43,7 @@
     </footer>
   </div>
 
+  <script src="/static/common-style/bridge.js" defer></script>
   <script src="/static/creationMode/creationMode.js"></script>
 </body>
 </html>
