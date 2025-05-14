@@ -1,4 +1,5 @@
 function navigateTo(page) {
+  sendAction('set_page', 'home');     // NOT WORKING
   window.location.href = pageUrl(page);
 }
 

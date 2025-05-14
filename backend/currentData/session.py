@@ -6,7 +6,7 @@ class PlayerState:
     volume: int = 50                 # 0‒100  (%)
     tempo: int = 60                  # BPM
     playing: bool = False            # True if currently playing
-    page: str = "home"               # Page represents actual state
+    page: str = "home"               # Page represents actual state NOT WORKING ON THE FRONT
     melody: Optional[str] = None     # name / id of the melody
     note_index: Optional[int] = 0    # position within the melody
 
@@ -14,19 +14,37 @@ state = PlayerState()
 
 def set_volume(value: int) -> None:
     state.volume = max(0, min(100, value)) # 0-100
+    print(state.volume)
 
 def set_tempo(bpm: int) -> None:
     state.tempo = max(60, min(120, bpm))   # 60,90,120
+    print(state.tempo)
 
 def start_playback() -> None:
     state.playing = True
+    print(state.playing)
 
 def stop_playback() -> None:
     state.playing = False
-
+    print(state.playing)
+    
 def select_melody(name: str) -> None:
     state.melody = name
     state.note_index = 0
+    print(state)
 
 def set_page(name: str) -> None:
     state.page = name 
+    print(state)
+
+def as_dict() -> dict:
+    current_note = "G4" if state.melody else None
+    return {
+        "volume"      : state.volume,
+        "tempo"       : state.tempo,
+        "playing"     : state.playing,
+        "page"        : state.page,
+        "melody"      : state.melody,
+        "note_index"  : state.note_index,
+        "current_note": current_note,
+    }

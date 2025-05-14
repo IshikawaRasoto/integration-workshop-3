@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 
 from backend.currentData.session import (
     state, set_volume, set_tempo, start_playback,
-    stop_playback, select_melody, set_page
+    stop_playback, select_melody, set_page, as_dict
 )
 
 def current_state_dict() -> Dict[str, Any]:
@@ -23,7 +23,6 @@ def current_state_dict() -> Dict[str, Any]:
         "set_page": state.page
     }
 
-
 class ConnectionManager:
     def __init__(self) -> None:
         self.active: List[WebSocket] = []
@@ -31,14 +30,14 @@ class ConnectionManager:
     async def connect(self, ws: WebSocket) -> None:
         await ws.accept()
         self.active.append(ws)
-        await ws.send_json({"type": "state", "state": current_state_dict()})
+        await ws.send_json({"type": "state", "state": as_dict()})
 
     def disconnect(self, ws: WebSocket) -> None:
         if ws in self.active:
             self.active.remove(ws)
 
     async def broadcast_state(self) -> None:
-        message = {"type": "state", "state": current_state_dict()}
+        message = {"type": "state", "state": as_dict()}
         to_remove: List[WebSocket] = []
         for ws in self.active:
             try:
@@ -48,9 +47,7 @@ class ConnectionManager:
         for ws in to_remove:
             self.disconnect(ws)
 
-
 manager = ConnectionManager()
-
 app = FastAPI()
 
 # 1. Serve static files (HTML/CSS/JS/images)
@@ -91,12 +88,10 @@ async def websocket_endpoint(ws: WebSocket):
                 # unknown action 
                 pass
 
-            # After mutation, broadcast new state
             await manager.broadcast_state()
 
-    except WebSocketDisconnect:
+    except (WebSocketDisconnect, RuntimeError):
         manager.disconnect(ws)
-
 
 @app.get("/creation")
 async def creation_redirect():
@@ -110,3 +105,27 @@ async def hear_redirect():
 async def identify_redirect():
     return RedirectResponse(url="/static/identifyNote/identifyNote.html")
 
+async def websocket_endpoint(ws: WebSocket):
+    await manager.connect(ws)          
+    try:
+        while True:
+            data = await ws.receive_json()
+            action = data.get("action")
+            value  = data.get("value")
+
+            match action:
+                case "set_volume":      set_volume(int(value))
+                case "set_tempo":       set_tempo(int(value))
+                case "start":           start_playback()
+                case "stop":            stop_playback()
+                case "select_melody":   select_melody(str(value))
+                case "set_page":        set_page(str(value))
+                case _:                 continue            # ignore bad action
+            await manager.broadcast_state()                 # notify everyone
+
+    except WebSocketDisconnect:
+        manager.disconnect(ws)
+
+    except Exception as e:
+        print(f"WebSocket error: {e}")
+        manager.disconnect(ws)
