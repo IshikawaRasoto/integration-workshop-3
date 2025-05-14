@@ -72,7 +72,6 @@ function selectMusic() {
   alert(`You selected: ${document.getElementById('musicSelect').value}`);
 }
 
-function goBack() { 
-  // this would navigate back to home page
-  alert('Going back…'); 
+function goBack() {
+  window.location.href = '/';  
 }
