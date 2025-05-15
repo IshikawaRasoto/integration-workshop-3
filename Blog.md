@@ -19,6 +19,11 @@
 
 ## 7th week (10/05/25 - 15/05/25)
 
+https://drive.google.com/file/d/1HU00oeIiyC617RvUnKEH0RWAW4GVyMLu/view?usp=sharing
+
+> [!NOTE]
+> video doesn't work, here is the <a href="https://youtu.be/vphRbDHo6h4">alternative link</a>
+
 ### Weekly Progress Report
 
 - **Worked Hours:** 39  
