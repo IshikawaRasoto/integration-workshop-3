@@ -23,8 +23,8 @@
 
 
 > [!NOTE]
-> video doesn't work, here is the <a href="https://youtu.be/vphRbDHo6h4">alternative link</a>
 > video doesn't work, here is the <a href="https://drive.google.com/file/d/1HU00oeIiyC617RvUnKEH0RWAW4GVyMLu/view?usp=sharing">alternative link</a>
+> or <a href="https://youtu.be/vphRbDHo6h4"> another alternative link</a>
 
 ### Weekly Progress Report
 
