@@ -2,9 +2,6 @@
 
 let holdTimer = null;
 
-/* --------------------------------------------------
-   DOM ready → attach handlers
--------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
 
     const volUp   = document.getElementById('volUpBtn');

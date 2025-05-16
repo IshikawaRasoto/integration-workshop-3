@@ -1,30 +1,25 @@
-/* Override screen justification */
 .screen {
-  justify-content: flex-start; /* Override the flex-end from common.css */
+  justify-content: flex-start; 
 }
 
-/* Note display specific styling */
 .note-display {
   margin-top: 80px;
   text-align: center;
   margin-bottom: 40px;
 }
 
-/* Override controls layout */
 .controls {
-  justify-content: center; /* Override space-between from common.css */
+  justify-content: center; 
 }
 
 .control-column {
-  width: 60%; /* Override 48% from common.css */
+  width: 60%; 
 }
 
-/* Override button active state behavior */
 button:active {
-  filter: brightness(90%); /* Override background-color change from common.css */
+  filter: brightness(90%); 
 }
 
-/* Override play/stop button active states to match this page's behavior */
 .play-button:active {
   background-color: #3d8b40;
 }

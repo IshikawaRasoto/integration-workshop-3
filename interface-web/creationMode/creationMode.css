@@ -1,13 +1,9 @@
-/* Note display specific styling */
 .note-display {
   margin-top: 80px;
   text-align: center;
   margin-bottom: 40px;
 }
 
-
-
 .control-column {
-  /* If this page needs specific width */
   width: 60%;
 }
