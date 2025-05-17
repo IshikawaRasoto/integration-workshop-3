@@ -5,11 +5,7 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
-from backend.currentData.session import (
-    state, set_volume, set_tempo, start_playback,
-    stop_playback, select_melody, set_page, as_dict,
-    set_accessibility 
-)
+from backend.core.session import *
 
 def current_state_dict() -> Dict[str, Any]:
     """Return the full state + computed current_note."""
@@ -51,18 +47,17 @@ class ConnectionManager:
 manager = ConnectionManager()
 app = FastAPI()
 
-# 1. Serve static files (HTML/CSS/JS/images)
 frontend_root = Path(__file__).parents[1] / "interface-web"
 app.mount("/static", StaticFiles(directory=frontend_root, html=False), name="static")
 
-# 2. Root endpoint returns the home page
+# Root endpoint returns the home page
 @app.get("/", response_class=HTMLResponse)
 async def root():
     file_path = frontend_root / "homePage" / "index.html"
     return file_path.read_text(encoding="utf-8")
 
 
-# 3. WebSocket route
+# WebSocket route
 @app.websocket("/ws")
 async def websocket_endpoint(ws: WebSocket):
     await manager.connect(ws)          

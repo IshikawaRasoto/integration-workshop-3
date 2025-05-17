@@ -6,10 +6,10 @@ class PlayerState:
     volume: int = 50                 # 0‒100  (%)
     tempo: int = 60                  # BPM
     playing: bool = False            # True if currently playing
-    page: str = "home"               # Page represents actual state TODO NOT WORKING ON THE FRONT
+    page: str = "home"               # Page represents actual state 
     melody: Optional[str] = None     # name / id of the melody
     note_index: Optional[int] = 0    # position within the melody
-    accessibility: bool = False
+    accessibility: bool = False      # True if accessbility is turned on
 
 state = PlayerState()
 
