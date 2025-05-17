@@ -1,5 +1,3 @@
-/* creationMode.js */
-
 let holdTimer = null;
 
 document.addEventListener('DOMContentLoaded', () => {

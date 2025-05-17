@@ -1,5 +1,20 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const accSwitch = document.getElementById("accessibilityToggle");
+  if (!accSwitch) return;
+
+  accSwitch.addEventListener("change", () => {
+    sendAction("set_accessibility", accSwitch.checked);
+  });
+
+  document.addEventListener("state-updated", (ev) => {
+    const { accessibility } = ev.detail;
+    if (typeof accessibility === "boolean") {
+      accSwitch.checked = accessibility;
+    }
+  });
+});
 function navigateTo(page) {
-  sendAction('set_page', 'home');     // NOT WORKING
+  sendAction('set_page', page);     // NOT WORKING
   window.location.href = pageUrl(page);
 }
 
