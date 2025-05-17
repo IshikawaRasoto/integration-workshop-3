@@ -11,7 +11,16 @@
 <body>
   <div class="screen">
     <h1 class="title">Melody</h1>
-    
+
+    <div class="accessibility-switch">
+      <span class="acc-label">Acessibilidade</span>
+
+      <label class="switch">
+        <input type="checkbox" id="accessibilityToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
     <div class="menu-container">
       <button class="menu-button" onclick="navigateTo('creation')">Modo de Criação</button>
       <button class="menu-button" onclick="navigateTo('hear')">Escute a Nota</button>
@@ -35,6 +44,8 @@
     <div class="footer-text">Melody App v1.0</div>
   </div>
 
+  
+  <script>window.__PAGE_NAME__ = "home";</script>
   <script src="/static/common-style/bridge.js" defer></script>
   <script src="/static/homePage/index.js"></script>
 </body>

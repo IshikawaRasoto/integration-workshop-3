@@ -9,6 +9,7 @@ class PlayerState:
     page: str = "home"               # Page represents actual state TODO NOT WORKING ON THE FRONT
     melody: Optional[str] = None     # name / id of the melody
     note_index: Optional[int] = 0    # position within the melody
+    accessibility: bool = False
 
 state = PlayerState()
 
@@ -47,6 +48,10 @@ def set_page(name: str) -> None:
     state.page = name 
     print(state)
 
+def set_accessibility(flag: bool) -> None:        
+    state.accessibility = bool(flag)
+    print(f"[state] accessibility → {state.accessibility}")
+
 def as_dict() -> dict:
     current_note = "G4" if state.melody else None
     return {
@@ -57,4 +62,5 @@ def as_dict() -> dict:
         "melody"      : state.melody,
         "note_index"  : state.note_index,
         "current_note": current_note,
+        "accessibility": state.accessibility,
     }

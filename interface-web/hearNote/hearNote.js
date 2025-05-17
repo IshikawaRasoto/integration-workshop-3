@@ -1,6 +1,5 @@
 let holdTimer = null;
 
-
 document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('playNoteBtn')
@@ -10,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const volDownBtn = document.getElementById('volDownBtn');
 
   function startHold(step) {
-      changeVolume(step);                        // immediate tick
+      changeVolume(step);                       
       holdTimer = setInterval(() => changeVolume(step), 250);
   }
   function stopHold() { clearInterval(holdTimer); }

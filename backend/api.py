@@ -7,7 +7,8 @@ from fastapi.staticfiles import StaticFiles
 
 from backend.currentData.session import (
     state, set_volume, set_tempo, start_playback,
-    stop_playback, select_melody, set_page, as_dict
+    stop_playback, select_melody, set_page, as_dict,
+    set_accessibility 
 )
 
 def current_state_dict() -> Dict[str, Any]:
@@ -78,6 +79,7 @@ async def websocket_endpoint(ws: WebSocket):
                 case "stop":            stop_playback()
                 case "select_melody":   select_melody(str(value))
                 case "set_page":        set_page(str(value))
+                case "set_accessibility": set_accessibility(bool(value))
                 case _:                 continue            # ignore bad action
             await manager.broadcast_state()                 # notify everyone
 

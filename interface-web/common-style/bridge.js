@@ -4,9 +4,7 @@ let latestState = {};
 function connectWS() {
     ws = new WebSocket(`ws://${location.host}/ws`);
 
-    ws.onopen = () => {
-        sendAction("set_page", window.__PAGE_NAME__ || "home");
-    };
+    ws.onopen = () => {}; //removed set page home
 
     ws.onmessage = (ev) => {
         const msg = JSON.parse(ev.data);
@@ -42,6 +40,9 @@ function applyStateToDOM(s) {
 
     const n = document.getElementById("currentNote");
     if (n && s.current_note) n.textContent = s.current_note;
+
+    const sw = document.getElementById("accessibilityToggle");
+    if (sw && typeof s.accessibility === "boolean") sw.checked = s.accessibility;
 }
 
 function maybeRedirectPage(s) {
