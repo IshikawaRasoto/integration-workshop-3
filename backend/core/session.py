@@ -46,7 +46,7 @@ def select_melody(name: str) -> None:
 
 def set_page(name: str) -> None:
     state.page = name 
-    print(state)
+    print(f"On set_page {state}")
 
 def set_accessibility(flag: bool) -> None:        
     state.accessibility = bool(flag)
