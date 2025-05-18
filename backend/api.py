@@ -5,7 +5,7 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
-from backend.core.session import *
+from core.session import *
 
 def current_state_dict() -> Dict[str, Any]:
     """Return the full state + computed current_note."""
