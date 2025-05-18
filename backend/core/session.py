@@ -16,30 +16,24 @@ state = PlayerState()
 def set_volume(value: int) -> None:
     volume = max(0, min(100, value)) # 0-100
 
-    #TODO  IMPLEMENTAR AUMENTAR VOLUME PARA volume  AQUI
+    #TODO  INCREASE VOLUME ON SPEAKER
     state.volume = volume # 0-100
     print(state.volume)
 
 def set_tempo(bpm: int) -> None:
     tempo = max(60, min(120, bpm))
-    #TODO  IMPLEMENTAR AUMENTAR TEMPORIZAÇÃO PARA tempo  AQUI
     state.tempo = tempo   # 60,90,120
     print(state.tempo)
 
 def start_playback() -> None:
-
-    #TODO IMPLEMENTAR o PLAY aquii
     state.playing = True
     print(state.playing)
 
 def stop_playback() -> None:
-
-    #TODO Implementar o STOP aqui
     state.playing = False
     print(state.playing)
     
 def select_melody(name: str) -> None:
-    #TODO IMPLEMENTAR LOGICA DA MELODIA AQUI
     state.melody = name
     state.note_index = 0
     print(state)
