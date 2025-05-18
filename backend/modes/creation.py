@@ -4,11 +4,11 @@ from core import session, hardware, noteDetection
 
 beats = 0
 lastColumnIndex = None  
-notesIndex = {}
 
 async def run_mode():
     global beats, lastColumnIndex
     start_time = time.time()
+    notes_and_durations = get_empty_board()
     print("[CreationMode] Entered Creation Mode")
     try:
         while session.state.page == "creation":
@@ -23,6 +23,7 @@ async def run_mode():
 
                 hardware.turnOnLed(columnIndex)  
                 lastColumnIndex = columnIndex
+                hardware.playColumn(columnIndex,notes_and_durations)
                 # TODO: Play the note corresponding to the current column, with not updated list
 
                 # TODO: Really Detect the notes
@@ -39,3 +40,5 @@ async def run_mode():
             lastColumnIndex = None
         print("[CreationMode] Exited Creation Mode")
 
+def get_empty_board():
+    return [("None", "") for _ in range(16)]
