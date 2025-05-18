@@ -9,9 +9,9 @@ async def run_mode():
         # TODO: Use noteDetection to read placed note
         # TODO: Compare detected note to expected note
 
-        # TODO: If correct → Green LED, advance to next note
-        # TODO: If incorrect → Red LED
-        # TODO: If no note → Yellow LED
+        # TODO: Green LED if correct, advance index
+        # TODO: Red LED if incorrect
+        # TODO: Yellow LED if nothing detected
 
         
         await asyncio.sleep(0.5) # avoid CPU overuse (this mode doesn't need to be so fast)
