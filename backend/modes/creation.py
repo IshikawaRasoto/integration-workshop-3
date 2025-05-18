@@ -1,10 +1,10 @@
 import asyncio
 import time
-from core import session, hardware
+from core import session, hardware, noteDetection
 
 beats = 0
 lastColumnIndex = None  
-
+notesIndex = {}
 
 async def run_mode():
     global beats, lastColumnIndex
@@ -23,10 +23,12 @@ async def run_mode():
 
                 hardware.turnOnLed(columnIndex)  
                 lastColumnIndex = columnIndex
+                # TODO: Play the note corresponding to the current column, with not updated list
 
-                # TODO: Determine the current note from melody
-                # TODO: Play the note corresponding to the current column
-                # TODO: Move to next column after a delay based on tempo
+                # TODO: Really Detect the notes
+                notes_and_durations = await noteDetection.detectBoardNotes()    #Update it
+                # print(f"[CreationMode] Board state: {notes_and_durations}")
+
                 beats += 1
 
             await asyncio.sleep((60 / session.state.tempo) / 4) 
