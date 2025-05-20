@@ -14,7 +14,7 @@ print(f"[NoteDetection] Mocked Board Setup: {MOCK_RESULTS}")
 
 #Must return the note with its respective duration
 async def detect_note_for_column(column_index: int) -> tuple[str, str]:
-    await asyncio.sleep(0.005)  # simulate delay
+    await asyncio.sleep(0.050)  # simulate delay
 
     #TODO really detect 
     note, duration = MOCK_RESULTS[column_index]
