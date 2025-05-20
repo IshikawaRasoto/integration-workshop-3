@@ -2,15 +2,22 @@ import asyncio
 import random
 
 #TODO hardcode these notes that I don't know what I am doing.
-NOTES = ["C4", "C#4", "Db4", "D4", "D#4", "Eb4", "E4", "F4", "F#4", "Gb4", "G4", "G#4", "Ab4", "A4", "A#4", "Bb4", "B4", "None"]
+NOTES = ["C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B", "None"]
 DURATIONS = ["quarter", "half", "whole"]  
 
-MOCK_RESULTS = []
-for i in range(16):
-    note = random.choice(NOTES)
-    duration = random.choice(DURATIONS) if note != "None" else ""
-    MOCK_RESULTS.append((note, duration))
-print(f"[NoteDetection] Mocked Board Setup: {MOCK_RESULTS}")
+MOCK_RESULTS = [
+    ("C", "quarter"), ("C", "quarter"),
+    ("G", "quarter"), ("G", "quarter"),
+    ("A", "quarter"), ("A", "quarter"),
+    ("G", "half"),
+    ("F", "quarter"), ("F", "quarter"),
+    ("E", "quarter"), ("E", "quarter"),
+    ("D", "quarter"), ("D", "quarter"),
+    ("C", "half"),
+    ("None", ""), ("None", "")
+]
+
+print(f"[NoteDetection] Twinkle Twinkle Board Setup: {MOCK_RESULTS}")
 
 #Must return the note with its respective duration
 async def detect_note_for_column(column_index: int) -> tuple[str, str]:
