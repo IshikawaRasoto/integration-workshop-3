@@ -81,8 +81,6 @@ async def play_note_async(note, duration):
         sd.stop()
         # Start playback
         sd.play(wave, samplerate=sample_rate)
-        # Wait asynchronously
-        await asyncio.to_thread(sd.wait)
 
 # Example async caller
 def run_sequence():
