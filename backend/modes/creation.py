@@ -1,6 +1,8 @@
 import asyncio
 import time
-from core import session, hardware, noteDetection
+import sounddevice as sd
+from core import session, hardware, noteDetection, soundPlaying
+
 
 beats = 0
 lastColumnIndex = None  
@@ -33,7 +35,12 @@ async def run_mode():
                 lastColumnIndex = columnIndex
                 
                 # TODO: Play the note corresponding to the current column, with not updated list
-                hardware.playColumn(columnIndex,notes_and_durations)
+                note = notes_and_durations[columnIndex][0]
+                if note == "None":
+                    sd.stop()
+                else:
+                    await soundPlaying.play_note_async(note,(60 / session.state.tempo) / 4)
+
                 # print(f"[CreationMode] Board state: {notes_and_durations}")
 
                 beats += 1
