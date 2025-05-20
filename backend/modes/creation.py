@@ -3,7 +3,6 @@ import time
 import sounddevice as sd
 from core import session, hardware, noteDetection, soundPlaying
 
-
 beats = 0
 lastColumnIndex = None  
 
@@ -45,7 +44,7 @@ async def run_mode():
 
                 beats += 1
 
-            await asyncio.sleep((60 / session.state.tempo) / 4) 
+            await asyncio.sleep((60 / session.state.tempo)) 
 
     except asyncio.CancelledError: # when ModeManager does .cancel()
         if lastColumnIndex is not None:
