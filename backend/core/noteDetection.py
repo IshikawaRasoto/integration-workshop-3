@@ -6,15 +6,10 @@ NOTES = ["C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab"
 DURATIONS = ["quarter", "half", "whole"]  
 
 MOCK_RESULTS = [
-    ("C", "quarter"), ("C", "quarter"),
-    ("G", "quarter"), ("G", "quarter"),
-    ("A", "quarter"), ("A", "quarter"),
-    ("G", "half"),
-    ("F", "quarter"), ("F", "quarter"),
-    ("E", "quarter"), ("E", "quarter"),
-    ("D", "quarter"), ("D", "quarter"),
-    ("C", "half"),
-    ("None", ""), ("None", "")
+    ("G", "quarter"), ("G", "quarter"), ("D", "quarter"), ("D", "quarter"),
+    ("E", "quarter"), ("E", "quarter"), ("D", "half"),    ("None", ""),
+    ("C", "quarter"), ("C", "quarter"), ("B", "quarter"), ("B", "quarter"),
+    ("A", "quarter"), ("A", "quarter"), ("G", "half"),    ("None", "")
 ]
 
 print(f"[NoteDetection] Twinkle Twinkle Board Setup: {MOCK_RESULTS}")
