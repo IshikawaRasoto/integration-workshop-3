@@ -8,7 +8,7 @@ class PlayerState:
     playing: bool = False            # True if currently playing
     page: str = "home"               # Page represents actual state 
     melody: Optional[str] = None     # name / id of the melody
-    note_index: Optional[int] = 0    # position within the melody
+    note: Optional[str] = None       # note within the melody 
     accessibility: bool = False      # True if accessbility is turned on
 
 state = PlayerState()

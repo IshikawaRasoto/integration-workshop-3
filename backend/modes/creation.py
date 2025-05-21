@@ -5,12 +5,16 @@ from core import session, hardware, noteDetection, soundPlaying
 
 beats = 0
 lastColumnIndex = None  
+detect_task = None
 
 async def run_mode():
     global beats, lastColumnIndex
     start_time = time.time()
-    notes_and_durations = get_empty_board()
-    detect_task = None
+
+    detect_task = asyncio.create_task(noteDetection.detectBoardNotes())
+    if detect_task is not None and detect_task.done():
+        notes_and_durations = detect_task.result()
+
     print("[CreationMode] Entered Creation Mode")
     try:
         while session.state.page == "creation":
@@ -23,12 +27,15 @@ async def run_mode():
                 detect_task = asyncio.create_task(noteDetection.detectBoardNotes())
 
                 elapsed = time.time() - start_time
-                print(f"[Beat {beats}] Elapsed Time: {elapsed:.3f}s")
+                print(f"[Beat {beats}] Elapsed Time: {elapsed:.3f}s")#for debuggin tempo
                 
                 columnIndex = beats % 16  # 0 to 15
 
                 if lastColumnIndex is not None:
                     hardware.turnOffLed(lastColumnIndex)
+                
+                if columnIndex == 0 and beats != 0:
+                    await asyncio.sleep(1.5)  #little delay to start again
 
                 hardware.turnOnLed(columnIndex)  
                 lastColumnIndex = columnIndex
@@ -39,8 +46,6 @@ async def run_mode():
                     sd.stop()
                 else:
                     await soundPlaying.play_note_async(note,(60 / session.state.tempo) / 4)
-
-                # print(f"[CreationMode] Board state: {notes_and_durations}")
 
                 beats += 1
 

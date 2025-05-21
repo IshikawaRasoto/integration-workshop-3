@@ -2,6 +2,8 @@ import numpy as np
 import sounddevice as sd
 import asyncio
 
+from .utils import *
+
 # Sample rate for audio
 sample_rate = 44100
 
@@ -46,23 +48,6 @@ def synthesize_note(frequency, duration):
             0.5 * np.sin(2 * np.pi * frequency * 2 * t) +
             0.25 * np.sin(2 * np.pi * frequency * 3 * t))
     return wave * envelope(t)
-
-# Frequencies for 12 chromatic notes
-note_freqs = {
-    'C': 261.63,
-    'C#': 277.18, 'Db': 277.18,
-    'D': 293.66,
-    'D#': 311.13, 'Eb': 311.13,
-    'E': 329.63,
-    'F': 349.23,
-    'F#': 369.99, 'Gb': 369.99,
-    'G': 392.00,
-    'G#': 415.30, 'Ab': 415.30,
-    'A': 440.00,
-    'A#': 466.16, 'Bb': 466.16,
-    'B': 493.88,
-    'R': None  # Rest
-}
 
 data_lock = asyncio.Lock()
 
