@@ -38,6 +38,11 @@ function applyStateToDOM(s) {
     const m = document.getElementById("musicSelect");
     if (m && s.melody) m.value = s.melody;
 
+    const currentNoteDisplayElement = document.getElementById("currentNoteDisplay");
+    if (currentNoteDisplayElement && (s.page === "hear" || s.page === "identify") && typeof s.note !== 'undefined') {
+        currentNoteDisplayElement.textContent = s.note ? s.note : "-";
+    }
+
     const n = document.getElementById("currentNote");
     if (n && s.current_note) n.textContent = s.current_note;
 

@@ -1,6 +1,6 @@
 #TODO hardcode melodies (sequence of notes with duration)
 
-MELODY1 = [
+OVELHA_PRETA = [
     ("G", "quarter"), ("G", "quarter"), ("D", "quarter"), ("D", "quarter"),
     ("E", "quarter"), ("E", "quarter"), ("D", "half"),    ("None", ""),
     ("C", "quarter"), ("C", "quarter"), ("B", "quarter"), ("B", "quarter"),
