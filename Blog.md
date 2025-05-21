@@ -19,8 +19,6 @@
 
 ## 8th week (16/05/25 - 22/05/25)
 
-[![Watch the video]
-
 
 > [!NOTE]
 > video doesn't work, here is the <a href="">alternative link</a>
