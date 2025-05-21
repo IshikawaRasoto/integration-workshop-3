@@ -5,7 +5,7 @@ async def run_mode():
     print("[IdentifyMode] Entered Identify Note Mode")
     try:
         while session.state.page == "identify":
-            # TODO: Read current note from melody using note_index
+            # TODO: Read current note from melody 
             # TODO: Use noteDetection to read placed note
             # TODO: Compare detected note to expected note
 

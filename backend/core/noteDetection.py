@@ -1,32 +1,32 @@
 import asyncio
-import random
-
-#TODO hardcode these notes that I don't know what I am doing.
-NOTES = ["C", "C#", "Db", "D", "D#", "Eb", "E", "F", "F#", "Gb", "G", "G#", "Ab", "A", "A#", "Bb", "B", "None"]
-DURATIONS = ["quarter", "half", "whole"]  
-
-MOCK_RESULTS = [
-    ("G", "quarter"), ("G", "quarter"), ("D", "quarter"), ("D", "quarter"),
-    ("E", "quarter"), ("E", "quarter"), ("D", "half"),    ("None", ""),
-    ("C", "quarter"), ("C", "quarter"), ("B", "quarter"), ("B", "quarter"),
-    ("A", "quarter"), ("A", "quarter"), ("G", "half"),    ("None", "")
-]
-
-print(f"[NoteDetection] Twinkle Twinkle Board Setup: {MOCK_RESULTS}")
+from .utils import *
 
 #Must return the note with its respective duration
 async def detect_note_for_column(column_index: int) -> tuple[str, str]:
     await asyncio.sleep(0.050)  # simulate delay
 
     #TODO really detect 
-    note, duration = MOCK_RESULTS[column_index]
-    # print(f"[NoteDetection] Column {column_index}: {note}, {duration}")
-    return (note, duration)
+    note, duration = MELODY1[column_index]          #TODO this should be replaced by a board state
+    if duration != "":
+        return (note, duration)
+    
+    note, duration = MELODY1[column_index - 1]      #TODO this should be replaced by a board state
+    if duration == "half" or duration == "whole":
+        return (note, duration)
+
+    note3, duration3 = MELODY1[column_index - 2]    #TODO this should be replaced by a board state
+    note4, duration4 = MELODY1[column_index - 3]    #TODO this should be replaced by a board state
+
+    if duration3 == "whole":
+        return (note3, duration3)
+    elif duration4 == "whole":
+        return(note4,duration4)
+    
+    return None,""
 
 #Must return all notes with its durations
 async def detectBoardNotes() -> list[tuple[str, str]]:
     results = await asyncio.gather(*(detect_note_for_column(i) for i in range(16)))
-    # print(f"[NoteDetection] Board Detected: {results}")
     return results
 
 #TODO detection of colors
