@@ -1,7 +1,9 @@
 import asyncio
 import uvicorn
 import importlib
+import threading
 from core import session
+from core.noteDetection import NoteDetection
 
 # Mapping between page values and their corresponding mode modules
 MODE_MODULES = {
@@ -10,6 +12,9 @@ MODE_MODULES = {
     "identify": "modes.identify",
     "hear": "modes.hear",
 }
+
+note_detect_obj = NoteDetection()
+tread = threading.Thread(target=note_detect_obj.detect_note_loop)
 
 class ModeManager:
     def __init__(self):
@@ -54,7 +59,9 @@ async def main():
     server = uvicorn.Server(config)
     api_task = asyncio.create_task(server.serve())
 
-    print("[Main] Uvicorn server started.")
+    tread.start()
+
+    print("[Main] Uvicorn server and thread started")
 
     manager = ModeManager()
     try:
@@ -68,5 +75,7 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
+        note_detect_obj.stop_note_detection_thread()
+        tread.join()    
         print("\n[Main] Shutdown requested via Ctrl+C. Exiting cleanly.")
 
