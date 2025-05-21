@@ -1,6 +1,9 @@
 from dataclasses import dataclass
 from typing import Optional
 
+from .utils import *
+from .soundPlaying import *
+
 @dataclass
 class PlayerState:
     volume: int = 50                 # 0‒100  (%)
@@ -10,6 +13,7 @@ class PlayerState:
     melody: Optional[str] = None     # name / id of the melody
     note: Optional[str] = None       # note within the melody 
     accessibility: bool = False      # True if accessbility is turned on
+    note_index: int = 0              # Which note it is (note + duration)
 
 state = PlayerState()
 
@@ -35,26 +39,50 @@ def stop_playback() -> None:
     
 def select_melody(name: str) -> None:
     state.melody = name
-    state.note_index = 0
-    print(state)
+    if name == "Ovelha Preta":
+        state.note, _ = OVELHA_PRETA[0]
+    else:
+        state.note = None
+    print(f"On select_melody {state.melody}  {state.note}")
 
 def set_page(name: str) -> None:
     state.page = name 
     print(f"On set_page {state}")
 
+def set_note(note: str) -> None:
+    state.note = note 
+    print(f"On set_note {state}")
+
+def set_note_index(idx: int) -> None:
+    state.note_index = idx 
+    print(f"On set_note_index {state}")
+
 def set_accessibility(flag: bool) -> None:        
     state.accessibility = bool(flag)
-    print(f"[state] accessibility → {state.accessibility}")
+    print(f"[state] accessibility  {state.accessibility}")
+
+async def play_current_melody_note() -> None:
+    if state.note:
+        if state.melody == "Ovelha Preta":
+            note, duration = OVELHA_PRETA[state.note_index]
+        #TODO Two more melodies
+
+        if duration == "quarter":
+            await play_note_async(note, 1)
+        elif duration == "half":
+            await play_note_async(note, 2)
+        elif duration == "whole":
+            await play_note_async(note,4)
+
 
 def as_dict() -> dict:
-    current_note = "G4" if state.melody else None
     return {
-        "volume"      : state.volume,
-        "tempo"       : state.tempo,
-        "playing"     : state.playing,
-        "page"        : state.page,
-        "melody"      : state.melody,
-        "note_index"  : state.note_index,
-        "current_note": current_note,
+        "volume"       : state.volume,
+        "tempo"        : state.tempo,
+        "playing"      : state.playing,
+        "page"         : state.page,
+        "melody"       : state.melody,
+        "note"         : state.note,
         "accessibility": state.accessibility,
+        "note_index"   : state.note_index
     }

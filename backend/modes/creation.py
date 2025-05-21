@@ -2,6 +2,7 @@ import asyncio
 import time
 import sounddevice as sd
 from core import session, hardware, noteDetection, soundPlaying
+from core.utils import *
 
 beats = 0
 lastColumnIndex = None  
@@ -11,20 +12,13 @@ async def run_mode():
     global beats, lastColumnIndex
     start_time = time.time()
 
-    detect_task = asyncio.create_task(noteDetection.detectBoardNotes())
-    if detect_task is not None and detect_task.done():
-        notes_and_durations = detect_task.result()
+    #notes_and_durations = 
+    notes_and_durations = OVELHA_PRETA      #TODO mocking, update for real notes Detected
 
     print("[CreationMode] Entered Creation Mode")
     try:
         while session.state.page == "creation":
             if session.state.playing:
-
-                if detect_task is not None and detect_task.done():
-                    notes_and_durations = detect_task.result()
-
-                # TODO: Really Detect the notes
-                detect_task = asyncio.create_task(noteDetection.detectBoardNotes())
 
                 elapsed = time.time() - start_time
                 print(f"[Beat {beats}] Elapsed Time: {elapsed:.3f}s")#for debuggin tempo
@@ -41,11 +35,23 @@ async def run_mode():
                 lastColumnIndex = columnIndex
                 
                 # TODO: Play the note corresponding to the current column, with not updated list
-                note = notes_and_durations[columnIndex][0]
+                note, duration = notes_and_durations[columnIndex]
+                _, duration1 = notes_and_durations[columnIndex - 1]
+                _, duration2 = notes_and_durations[columnIndex - 2]
+                _, duration3 = notes_and_durations[columnIndex - 3]
+
+                durationInt = get_duration_value(duration)
+
                 if note == "None":
-                    sd.stop()
+                    if (duration1 == "half" or duration1 == "whole" or
+                       duration2 == "whole" or duration3 == "whole"):
+                        beats += 1
+                        await asyncio.sleep((60 / session.state.tempo)) 
+                        continue    
+                    else:
+                        sd.stop()
                 else:
-                    await soundPlaying.play_note_async(note,(60 / session.state.tempo) / 4)
+                    await soundPlaying.play_note_async(note,(60 / session.state.tempo) * durationInt)
 
                 beats += 1
 
@@ -59,3 +65,11 @@ async def run_mode():
 
 def get_empty_board():
     return [("None", "") for _ in range(16)]
+
+def get_duration_value(duration_string):
+    if(duration_string == "quarter"):
+        return 1
+    elif(duration_string == "half"):
+        return 2
+    elif(duration_string == "whole"):
+        return 4

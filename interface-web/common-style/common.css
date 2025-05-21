@@ -27,7 +27,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;  /* Added this line */
+  justify-content: flex-end;  
 }
 
 /* Logo container positioned absolutely to not affect the layout */
@@ -100,7 +100,7 @@ footer {
 
 .controls {
   display: flex;
-  justify-content: space-between;  /* Changed from center to space-between */
+  justify-content: space-between; 
   gap: 20px;
   width: 100%;
 }
@@ -192,4 +192,10 @@ button:active {
   font-weight: bold;
   color: #fff;
   text-shadow: 0 0 15px rgba(108, 99, 255, 0.7);
+}
+
+@media (max-width: 767px) { /* Apply these styles for screens narrower than 768px */
+  body {
+    min-height: 90vh; 
+  }
 }

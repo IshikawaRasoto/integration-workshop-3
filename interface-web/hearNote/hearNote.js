@@ -51,5 +51,6 @@ function goBack() {
 }
 
 function playNote() {
-  console.log('must playNote when required');
+  console.log('Sending action to play current note');
+  sendAction('play_current_note'); 
 }
