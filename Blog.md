@@ -17,6 +17,40 @@
 > [!NOTE]
 > The more you scroll, older the posts will be.
 
+## 8th week (16/05/25 - 22/05/25)
+
+[![Watch the video]
+
+
+> [!NOTE]
+> video doesn't work, here is the <a href="">alternative link</a>
+> or <a href=""> another alternative link</a>
+
+### Weekly Progress Report
+
+- **Worked Hours:** 50  
+- **Estimated Hours:** 49  
+
+#### Late Tasks:
+- Acessibility Box adjusts
+- PCB Test and Fine adjusts
+- Plan note detection algorithm
+- Communication between Raspberry and ESP
+- Electronics integration 
+
+**Total:** 12 hours
+
+#### Advanced Tasks:
+-  Creation Mode Logic
+-  Gamified Modes Logic
+-  Configuration and Mode selection via Web
+
+**Total:** 10 hours
+
+### Balance of Hours:
+- **-2 hours (Delayed)**
+
+
 ## 7th week (10/05/25 - 15/05/25)
 
 [![Watch the video](https://img.youtube.com/vi/vphRbDHo6h4/0.jpg)](https://youtu.be/vphRbDHo6h4)
