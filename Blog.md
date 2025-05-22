@@ -13,9 +13,79 @@
 - [Risk Response Plans](https://docs.google.com/document/d/1Hm508SiW-laHHYEpOHIg4PhOxUlGecafFV3NObWFzSE/edit?usp=sharing)
 
 - [Budget](./docs/Budget.md)
+  
+- [Software Diagramas](https://drive.google.com/drive/u/0/folders/1p14QvT_csh-KTkunY4fwNIppBQ_Pb9lO)
 
 > [!NOTE]
 > The more you scroll, older the posts will be.
+
+## 8th week (16/05/25 - 22/05/25)
+
+[![Watch the video](https://img.youtube.com/vi/CQ0k8XT7MOg/hqdefault.jpg)](https://youtu.be/CQ0k8XT7MOg)
+
+> [!NOTE]
+> video doesn't work, here is the <a href="https://drive.google.com/file/d/1eBVnDomfoXzMXdfsafBxS9mqTwlVErr4/view?usp=sharing">alternative link</a>
+> or <a href="https://youtu.be/CQ0k8XT7MOg"> another alternative link</a>
+
+### Weekly Progress Report
+
+- **Worked Hours:** 50  
+- **Estimated Hours:** 49  
+
+#### Late Tasks:
+- Acessibility Box adjusts
+- PCB Test and Fine adjusts
+- Plan note detection algorithm
+- Communication between Raspberry and ESP
+- Electronics integration 
+
+**Total:** 12 hours
+
+#### Advanced Tasks:
+-  Creation Mode Logic
+-  Gamified Modes Logic
+-  Configuration and Mode selection via Web
+
+**Total:** 10 hours
+
+### Balance of Hours:
+- **-2 hours (Delayed)**
+
+### [Software Diagrams](https://drive.google.com/drive/u/0/folders/1p14QvT_csh-KTkunY4fwNIppBQ_Pb9lO)
+
+## 7th week (10/05/25 - 15/05/25)
+
+[![Watch the video](https://img.youtube.com/vi/vphRbDHo6h4/0.jpg)](https://youtu.be/vphRbDHo6h4)
+
+
+> [!NOTE]
+> video doesn't work, here is the <a href="https://drive.google.com/file/d/1HU00oeIiyC617RvUnKEH0RWAW4GVyMLu/view?usp=sharing">alternative link</a>
+> or <a href="https://youtu.be/vphRbDHo6h4"> another alternative link</a>
+
+### Weekly Progress Report
+
+- **Worked Hours:** 39  
+- **Estimated Hours:** 51  
+
+#### Late Tasks:
+- Painting the table (musical sheet)  
+- Universal board  
+- Assembly of camera support and accessibility box  
+- Technical drawing of the camera support  
+**Total:** 24 hours
+
+#### Advanced Tasks:
+- Web interface  
+- Implementation of the API between the Raspberry Pi and the web interface  
+- Software flowchart  
+**Total:** 15 hours
+
+### Balance of Hours:
+- **-9 hours (Delayed)**
+
+### Considerations:
+The machine responsible for laser cutting was inoperable this week due to a lack of distilled water. As a result, the camera support and accessibility box could not be completed. Painting the table is not a time-sensitive task, so it was postponed.
+
 
 ## 6th week (02/05/25 - 09/05/25)
 
