@@ -51,7 +51,7 @@
 ### Balance of Hours:
 - **-2 hours (Delayed)**
 
-### [Software Diagramas](https://drive.google.com/drive/u/0/folders/1p14QvT_csh-KTkunY4fwNIppBQ_Pb9lO)
+### [Software Diagrams](https://drive.google.com/drive/u/0/folders/1p14QvT_csh-KTkunY4fwNIppBQ_Pb9lO)
 
 ## 7th week (10/05/25 - 15/05/25)
 
