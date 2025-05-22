@@ -24,6 +24,7 @@ O diretório `core/` contém os módulos centrais que formam a base da funcional
     * `turnOffLed(indexLed)`: Apaga um LED específico.
 * **🔴 TODOs/Pontos Pendentes**:
     * Implementar botões para chamar as respectivas funções de configuração (`set_volume`, `set_tempo`, `play/stop`).
+    * Realmente acender e apagar os respectivos leds
     * Implementar um botão de emergência que reseta tudo.
     * Desenvolver a comunicação com o ESP32.
     * Implementar o controle do servo motor.
