@@ -19,7 +19,7 @@
 
 ## 8th week (16/05/25 - 22/05/25)
 
-[![Watch the video](https://img.youtube.com/vi/CQ0k8XT7MOg/0.jpg)](https://youtu.be/CQ0k8XT7MOg)
+[![Watch the video](https://img.youtube.com/vi/CQ0k8XT7MOg/hqdefault.jpg)](https://youtu.be/CQ0k8XT7MOg)
 
 > [!NOTE]
 > video doesn't work, here is the <a href="https://drive.google.com/drive/u/0/folders/10c6PlQtRzQOg8JolQXebi1Es5W-dbNkd">alternative link</a>
