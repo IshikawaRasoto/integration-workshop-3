@@ -19,9 +19,8 @@
 
 ## 8th week (16/05/25 - 22/05/25)
 
-
 > [!NOTE]
-> video doesn't work, here is the <a href="">alternative link</a>
+> video doesn't work, here is the <a href="https://drive.google.com/drive/u/0/folders/10c6PlQtRzQOg8JolQXebi1Es5W-dbNkd">alternative link</a>
 > or <a href=""> another alternative link</a>
 
 ### Weekly Progress Report
