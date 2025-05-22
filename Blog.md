@@ -22,7 +22,7 @@
 [![Watch the video](https://img.youtube.com/vi/CQ0k8XT7MOg/hqdefault.jpg)](https://youtu.be/CQ0k8XT7MOg)
 
 > [!NOTE]
-> video doesn't work, here is the <a href="https://drive.google.com/drive/u/0/folders/10c6PlQtRzQOg8JolQXebi1Es5W-dbNkd">alternative link</a>
+> video doesn't work, here is the <a href="https://drive.google.com/file/d/1eBVnDomfoXzMXdfsafBxS9mqTwlVErr4/view?usp=sharing">alternative link</a>
 > or <a href="https://youtu.be/CQ0k8XT7MOg"> another alternative link</a>
 
 ### Weekly Progress Report
