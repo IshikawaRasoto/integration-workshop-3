@@ -22,6 +22,12 @@
 
 ## 9th week (23/05/25 - 29/05/25)
 
+[![Watch the video](https://img.youtube.com/vi/XbjRi2Wo8Gw)](https://youtu.be/XbjRi2Wo8Gw)
+
+> [!NOTE]
+> video doesn't work, here is the <a href="https://drive.google.com/file/d/1zL92fwCrnUkS4uXp7pSdOqfEj2-jlHWw/view?usp=sharing">alternative link</a>
+> or <a href="https://youtu.be/XbjRi2Wo8Gw"> another alternative link</a>
+
 
 ### Weekly Progress Report
 
