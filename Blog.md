@@ -19,6 +19,32 @@
 > [!NOTE]
 > The more you scroll, older the posts will be.
 
+
+## 9th week (23/05/25 - 29/05/25)
+
+
+### Weekly Progress Report
+
+- **Worked Hours:** 41 hours  
+- **Estimated Hours:** 57 hours 
+
+#### Late Tasks:
+- Implement gamified modes on the board
+- Finish and Test electronics, on the universal board
+
+**Total:** 10 hours
+
+#### Advanced Tasks:
+- Integrate configuration and mode selection via the web
+- Assembly of the electronics in the mechanical system (Partial)
+- Integrate software modules (Partial)
+
+**Total:** 9 hours
+
+### Balance of Hours:
+- **-1 hours (Delayed)**
+
+
 ## 8th week (16/05/25 - 22/05/25)
 
 [![Watch the video](https://img.youtube.com/vi/CQ0k8XT7MOg/hqdefault.jpg)](https://youtu.be/CQ0k8XT7MOg)
