@@ -5217,7 +5217,7 @@
 		)
 		(uuid "19f25e6d-9e74-457a-b1cc-8df5f15af653")
 	)
-	(label "R2"
+	(label "S_R2"
 		(at 180.34 125.73 0)
 		(effects
 			(font
@@ -5247,7 +5247,7 @@
 		)
 		(uuid "2278a3ed-f6ad-4f1f-ad37-fa0be719d073")
 	)
-	(label "R0"
+	(label "S_R0"
 		(at 140.97 100.33 180)
 		(effects
 			(font
@@ -5467,7 +5467,7 @@
 		)
 		(uuid "6b5f1e4d-24ad-4595-adc3-192c6e40fc72")
 	)
-	(label "R1"
+	(label "S_R1"
 		(at 180.34 123.19 0)
 		(effects
 			(font
@@ -5517,7 +5517,7 @@
 		)
 		(uuid "7b9ccb20-3b3b-4910-a484-768b057c9602")
 	)
-	(label "R0"
+	(label "S_R0"
 		(at 180.34 120.65 0)
 		(effects
 			(font
@@ -5727,7 +5727,7 @@
 		)
 		(uuid "c230777d-28ba-4957-952c-e5465b27369d")
 	)
-	(label "R1"
+	(label "S_R1"
 		(at 140.97 77.47 180)
 		(effects
 			(font
@@ -5747,7 +5747,7 @@
 		)
 		(uuid "c58a2883-301e-4ddf-a6a9-6a8b8f777337")
 	)
-	(label "R2"
+	(label "S_R2"
 		(at 52.07 67.31 0)
 		(effects
 			(font
@@ -5827,7 +5827,7 @@
 		)
 		(uuid "d23f6d8d-efba-416c-ba75-ab4b2a2860ed")
 	)
-	(label "R3"
+	(label "S_R3"
 		(at 52.07 82.55 0)
 		(effects
 			(font
@@ -5847,7 +5847,7 @@
 		)
 		(uuid "d98feacd-9177-4d8b-9b79-9616901674b1")
 	)
-	(label "R3"
+	(label "S_R3"
 		(at 180.34 128.27 0)
 		(effects
 			(font
