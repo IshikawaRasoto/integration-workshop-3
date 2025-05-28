@@ -36,7 +36,7 @@ The third mode will be similar to the second one, it will also want the children
 - The board will have holes to place in a precise way the notes on the music sheet.
 - The holes will be placed trough 4 columns in each compass, each hole representing a single note.
 - Each hole`s column will represent one tempo in the compass.
-- The board will have in each tempo an RGB LED that will serve as part of the user interface.
+- The board will have in each tempo an bicolor LED that will serve as part of the user interface.
 - The board should have an structure to hold a webcam and light sources over itself.
 - The board must have volume control.
 - The board must have tempo (rythm) control.
