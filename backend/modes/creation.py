@@ -42,7 +42,7 @@ async def run_mode():
 
                 durationInt = get_duration_value(duration)
 
-                if note == "None":
+                if note == "R":
                     if (duration1 == "half" or duration1 == "whole" or
                        duration2 == "whole" or duration3 == "whole"):
                         beats += 1
