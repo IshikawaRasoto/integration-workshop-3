@@ -123,7 +123,9 @@ def analisar_cores_com_mascaras(frame_to_analyze, debug=False):
 
         for color_name in color_ranges.keys():
             os.makedirs(f'{output_dir}/{color_name}', exist_ok=True)
-    
+
+    detected_notes_array = [("None", "") for _ in range(16)]
+    duration_map = {1: "quarter", 2: "half", 4: "whole"}
     # frame = cv2.imread('board_warped.png')
     frame = frame_to_analyze
 
@@ -169,11 +171,18 @@ def analisar_cores_com_mascaras(frame_to_analyze, debug=False):
                 cv2.circle(grid_frame, current_pos, 5, (255, 0, 0), -1)
                 cv2.rectangle(grid_frame, top_left, bot_right, (0, 255, 0), 3)
 
-                if predominant_color != 'None': 
-                    note_name = note_parser.parse_note((i, predominant_color), 'G')[0]
-                    cv2.putText(found_notes, note_name,
-                                (current_pos[0]-20, current_pos[1] + 40),
-                            cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), 3)
+                if predominant_color != 'None':
+                    note_name, duration_value = note_parser.parse_note((i, predominant_color), 'G')
+                    duration_string = duration_map.get(duration_value, "")
+                    
+                    array_index = b * 4 + j
+                    if 0 <= array_index < 16: # Should always be true with current loop structure
+                        detected_notes_array[array_index] = (note_name, duration_string)
+
+                    if debug:
+                        cv2.putText(found_notes, note_name,
+                                    (current_pos[0]-20, current_pos[1] + 40),
+                                cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), 3)
 
     if debug:
         for color_name, mask in color_masks.items():
@@ -188,13 +197,17 @@ def analisar_cores_com_mascaras(frame_to_analyze, debug=False):
     # rgb = cv2.cvtColor(grid_frame, cv2.COLOR_BGR2RGB)
     # plt.imshow(rgb)
     # plt.show()
-    return t0, t1
+    # return t0, t1
+    return detected_notes_array
 
 if __name__ == "__main__":
     image_to_load = cv2.imread('board_warped.png')
-
-    t0, t1 = analisar_cores_com_mascaras(image_to_load, True)
+    t0 = time.time()
+    detected_notes = analisar_cores_com_mascaras(image_to_load, False)
+    t1 = time.time()
     dt = t1-t0
     fps = 1/dt
-
+    print("Detected notes:")
+    for index, note_info in enumerate(detected_notes):
+        print(f"Position {index}: Note = {note_info[0]}, Duration = {note_info[1]}")
     print(f'{fps=}, {dt=}')
