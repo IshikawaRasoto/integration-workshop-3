@@ -113,14 +113,15 @@ def create_color_masks(hsv):
     return color_masks
 
 
-def analisar_cores_com_mascaras():
+def analisar_cores_com_mascaras(frame_to_analyze):
     # Criar diretório para salvar as imagens
     os.makedirs(output_dir, exist_ok=True)
 
     for color_name in color_ranges.keys():
         os.makedirs(f'{output_dir}/{color_name}', exist_ok=True)
     
-    frame = cv2.imread('board_warped.png')
+    # frame = cv2.imread('board_warped.png')
+    frame = frame_to_analyze
 
     height, width = frame.shape[:2]
 
@@ -185,7 +186,9 @@ def analisar_cores_com_mascaras():
     return t0, t1
 
 if __name__ == "__main__":
-    t0, t1 = analisar_cores_com_mascaras()
+    image_to_load = cv2.imread('board_warped.png')
+
+    t0, t1 = analisar_cores_com_mascaras(image_to_load)
     dt = t1-t0
     fps = 1/dt
 
