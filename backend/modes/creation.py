@@ -1,7 +1,7 @@
 import asyncio
 import time
 import sounddevice as sd
-from backend.core import detectionThread
+from core import detectionThread
 from core import session, hardware, soundPlaying
 from core.utils import *
 

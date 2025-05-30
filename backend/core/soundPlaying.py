@@ -3,6 +3,7 @@ import sounddevice as sd
 import asyncio
 
 from .utils import *
+from . import session 
 
 # Sample rate for audio
 sample_rate = 44100
@@ -47,7 +48,9 @@ def synthesize_note(frequency, duration):
     wave = (np.sin(2 * np.pi * frequency * t) +
             0.5 * np.sin(2 * np.pi * frequency * 2 * t) +
             0.25 * np.sin(2 * np.pi * frequency * 3 * t))
-    return wave * envelope(t)
+    volume_scale = session.state.volume / 100.0
+    
+    return wave * envelope(t) * volume_scale 
 
 data_lock = asyncio.Lock()
 
