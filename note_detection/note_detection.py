@@ -136,7 +136,7 @@ def analisar_cores_com_mascaras():
     t1 = time.time()
 
     # Cria uma cópia para desenhar a grade
-    grid_frame = frame.copy()
+    grid_frame = cv2.cvtColor(color_masks['black'], cv2.COLOR_GRAY2BGR).copy()
 
     # Cria uma cópia para escrever as notas encontradas
     found_notes = frame.copy()
@@ -157,17 +157,34 @@ def analisar_cores_com_mascaras():
 
                 predominant_color = find_predominant_color_in_rectangle(color_masks, top_left, bot_right) or 'None'
 
-                cv2.putText(grid_frame, predominant_color,
-                            (current_pos[0] - 15, current_pos[1] + 15),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
+                # cv2.putText(grid_frame, predominant_color,
+                #             (current_pos[0] - 15, current_pos[1] + 15),
+                #             cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
 
                 cv2.circle(grid_frame, current_pos, 5, (255, 0, 0), -1)
                 cv2.rectangle(grid_frame, top_left, bot_right, (0, 255, 0), 3)
 
                 if predominant_color != 'None': 
-                    note_name = note_parser.parse_note((i, predominant_color), 'G')[0]
+                    note_name, note_duration = note_parser.parse_note((i, predominant_color), 'G')
+
+                    duration_map = {
+                        1: 'quarter',
+                        2: 'half',
+                        4: 'whole'
+                    }
+
                     cv2.putText(found_notes, note_name,
                                 (current_pos[0]-20, current_pos[1] + 40),
+                            cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 0), 9)
+                    cv2.putText(found_notes, note_name,
+                                (current_pos[0]-20, current_pos[1] + 40),
+                            cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), 3)
+
+                    cv2.putText(found_notes, duration_map[note_duration],
+                                (current_pos[0]-30, current_pos[1] + 70),
+                            cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 0), 9)
+                    cv2.putText(found_notes, duration_map[note_duration],
+                                (current_pos[0]-30, current_pos[1] + 70),
                             cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), 3)
 
     for color_name, mask in color_masks.items():
