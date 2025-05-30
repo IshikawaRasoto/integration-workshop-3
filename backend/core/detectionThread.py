@@ -7,7 +7,7 @@ class NoteDetection:
     
     def detect_note_loop(self):
         while self.running:
-            # TODO: Do all the logic to detect the notes
+            # TODO: call the logic to detect the notes
             return 
         
     def get_notes_detected(self):

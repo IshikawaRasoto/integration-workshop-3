@@ -12,13 +12,13 @@ class NoteParser:
         self.color_map = {
             "blue":      ("b", 1),  # Flat Quarter
             "green":     ("", 1),   # Natural Quarter
-            "red":       ("#", 1),  # Sharp Quarter
+            "pink":       ("#", 1),  # Sharp Quarter
             "cyan":      ("b", 2),  # Flat Half
-            "pink":      ("", 2),   # Natural Half
+            "red":      ("", 2),   # Natural Half
             "yellow":    ("#", 2),  # Sharp Half
             "black":     ("b", 4),  # Flat Semibreve
             "orange":    ("", 4),   # Natural Semibreve
-            "lightpink": ("#", 4)   # Sharp Semibreve
+            "wine": ("#", 4)   # Sharp Semibreve
         }
 
     def parse_note(self, note_input: tuple[int, str], clef: str) -> tuple[str, int]:
@@ -67,3 +67,4 @@ class NoteParser:
         note = base_note + accidental
 
         return (note, duration)
+
