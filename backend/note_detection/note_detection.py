@@ -73,7 +73,7 @@ def fill_small_holes(mask, max_hole_size):
 
     return mask
 
-def create_color_masks(hsv):
+def create_color_masks(hsv,debug):
     height, width = hsv.shape[:2]
     color_masks = {color: np.zeros((height, width), dtype=np.uint8) for color in color_ranges}
 
@@ -85,26 +85,29 @@ def create_color_masks(hsv):
         else:
             mask = cv2.inRange(hsv, color['lower'], color['upper'])
 
-
-        cv2.imwrite(f"{output_dir}/{color_name}/00-mask_color_range.jpg", mask)
+        if debug:
+            cv2.imwrite(f"{output_dir}/{color_name}/00-mask_color_range.jpg", mask)
 
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (10, 10))
         mask = cv2.dilate(mask, kernel)
-        cv2.imwrite(f"{output_dir}/{color_name}/01-mask-dilate.jpg", mask)
+        if debug:
+            cv2.imwrite(f"{output_dir}/{color_name}/01-mask-dilate.jpg", mask)
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (12, 12))
         mask = cv2.erode(mask, kernel)
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (10, 10))
         mask = cv2.dilate(mask, kernel)
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (12, 12))
         mask = cv2.erode(mask, kernel)
-        cv2.imwrite(f"{output_dir}/{color_name}/02-mask-dilate-erode.jpg", mask)
+        if debug:
+            cv2.imwrite(f"{output_dir}/{color_name}/02-mask-dilate-erode.jpg", mask)
 
         mask = fill_small_holes(mask, 1000)
-        cv2.imwrite(f"{output_dir}/{color_name}/03-mask-small-holes.jpg", mask)
-
+        if debug:
+            cv2.imwrite(f"{output_dir}/{color_name}/03-mask-small-holes.jpg", mask)
 
         mask_c = create_circles_mask(mask)
-        cv2.imwrite(f"{output_dir}/{color_name}/04-mask-circles.jpg", mask_c)
+        if debug:
+            cv2.imwrite(f"{output_dir}/{color_name}/04-mask-circles.jpg", mask_c)
 
         mask = cv2.bitwise_and(mask, mask_c)
 
@@ -113,12 +116,13 @@ def create_color_masks(hsv):
     return color_masks
 
 
-def analisar_cores_com_mascaras(frame_to_analyze):
+def analisar_cores_com_mascaras(frame_to_analyze, debug=False):
     # Criar diretório para salvar as imagens
-    os.makedirs(output_dir, exist_ok=True)
+    if debug:
+        os.makedirs(output_dir, exist_ok=True)
 
-    for color_name in color_ranges.keys():
-        os.makedirs(f'{output_dir}/{color_name}', exist_ok=True)
+        for color_name in color_ranges.keys():
+            os.makedirs(f'{output_dir}/{color_name}', exist_ok=True)
     
     # frame = cv2.imread('board_warped.png')
     frame = frame_to_analyze
@@ -133,7 +137,7 @@ def analisar_cores_com_mascaras(frame_to_analyze):
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     # Cria mascaras para as 9 cores
-    color_masks = create_color_masks(hsv)
+    color_masks = create_color_masks(hsv,debug)
     t1 = time.time()
 
     # Cria uma cópia para desenhar a grade
@@ -171,14 +175,15 @@ def analisar_cores_com_mascaras(frame_to_analyze):
                                 (current_pos[0]-20, current_pos[1] + 40),
                             cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), 3)
 
-    for color_name, mask in color_masks.items():
-        # Converte a máscara para BGR para desenhar em colorido
-        mask_bgr = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
-        cv2.imwrite(f"{output_dir}/{color_name}/99-mask_final.jpg", mask_bgr)
+    if debug:
+        for color_name, mask in color_masks.items():
+            # Converte a máscara para BGR para desenhar em colorido
+            mask_bgr = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
+            cv2.imwrite(f"{output_dir}/{color_name}/99-mask_final.jpg", mask_bgr)
 
-    # Mostra uma visualização rápida (opcional)
-    cv2.imwrite(f'{output_dir}/grade.png', grid_frame)
-    cv2.imwrite(f'{output_dir}/notas_classificadas.png', found_notes)
+        # Mostra uma visualização rápida (opcional)
+        cv2.imwrite(f'{output_dir}/grade.png', grid_frame)
+        cv2.imwrite(f'{output_dir}/notas_classificadas.png', found_notes)
 
     # rgb = cv2.cvtColor(grid_frame, cv2.COLOR_BGR2RGB)
     # plt.imshow(rgb)
@@ -188,7 +193,7 @@ def analisar_cores_com_mascaras(frame_to_analyze):
 if __name__ == "__main__":
     image_to_load = cv2.imread('board_warped.png')
 
-    t0, t1 = analisar_cores_com_mascaras(image_to_load)
+    t0, t1 = analisar_cores_com_mascaras(image_to_load, True)
     dt = t1-t0
     fps = 1/dt
 
