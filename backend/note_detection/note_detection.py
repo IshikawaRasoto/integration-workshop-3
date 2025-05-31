@@ -113,9 +113,10 @@ def create_color_masks(hsv, debug):
         if debug:
             cv2.imwrite(f"{output_dir}/{color_name}/03-mask-small-holes.jpg", mask)
 
-        mask_c = create_circles_mask(mask)
-        if debug:
-            cv2.imwrite(f"{output_dir}/{color_name}/04-mask-circles.jpg", mask_c)
+        if color_name != 'green':
+            mask_c = create_circles_mask(mask)
+            if debug:
+                cv2.imwrite(f"{output_dir}/{color_name}/04-mask-circles.jpg", mask_c)
 
     
         mask = cv2.bitwise_and(mask, mask_c)

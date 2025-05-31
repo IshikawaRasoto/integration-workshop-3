@@ -5,21 +5,27 @@ from core import detectionThread
 from core import session, hardware, soundPlaying
 from core.utils import *
 from core.detectionThread import NoteDetection
+from core.globals import note_detect_obj
+
 
 beats = 0
 lastColumnIndex = None  
 detect_task = None
 
 async def run_mode():
-    thread =  NoteDetection()
     global beats, lastColumnIndex
     start_time = time.time()
 
     print("[CreationMode] Entered Creation Mode")
     try:
+        notes_and_durations = note_detect_obj.get_notes_detected()
+
+        print (notes_and_durations)
+
         while session.state.page == "creation":
 
-            notes_and_durations = thread.get_notes_detected()
+            notes_and_durations = note_detect_obj.get_notes_detected()
+            
 
             if session.state.playing:
 
@@ -36,15 +42,16 @@ async def run_mode():
 
                 hardware.turnOnLed(columnIndex)  
                 lastColumnIndex = columnIndex
-                
+                #print(notes_and_durations[columnIndex])
                 note, duration = notes_and_durations[columnIndex]
                 _, duration1 = notes_and_durations[columnIndex - 1]
                 _, duration2 = notes_and_durations[columnIndex - 2]
                 _, duration3 = notes_and_durations[columnIndex - 3]
 
-                durationInt = get_duration_value(duration)
+                if note is not "None":
+                    durationInt = get_duration_value(duration)
 
-                if note == "R":
+                if note == "R" or note == "None":
                     if (duration1 == "half" or duration1 == "whole" or
                        duration2 == "whole" or duration3 == "whole"):
                         beats += 1
@@ -75,3 +82,5 @@ def get_duration_value(duration_string):
         return 2
     elif(duration_string == "whole"):
         return 4
+    else:
+        return 0

@@ -7,7 +7,7 @@ from note_detection.calibration import Calibration
 class NoteDetection:
 
     def __init__(self):
-        self.notes_detected = None #This variable is extremely important!
+        self.notes_detected = [("None", "") for _ in range(16)] #This variable is extremely important!
         self.running = True
         self.cam = cv2.VideoCapture(2) #TODO change this value to 0 later 
 
@@ -20,8 +20,13 @@ class NoteDetection:
         self.cam.set(cv2.CAP_PROP_FRAME_HEIGHT, desired_height)
 
         self.calibration = Calibration()
-        self.calibration.points = [(255, 62), (219, 1020), (1351, 1038), (1361, 94)]
+        # self.calibration.points = [(255, 62), (219, 1020), (1351, 1038), (1361, 94)]
         
+        _, frame = self.cam.read()
+        frame = cv2.rotate(frame, cv2.ROTATE_180)
+        frame = frame[:-10, 180:-240]
+        self.calibration.generate_calibration(frame)
+
         self.run = 0
     
     def detect_note_loop(self):
