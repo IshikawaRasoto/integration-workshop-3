@@ -13,14 +13,15 @@ output_dir = "color_analysis_output"
 
 # Definindo os intervalos de cores no espaço HSV
 color_ranges = {
-    'black': {'lower': np.array([0, 0, 0]), 'upper': np.array([180, 255, 70])},
+    'black': {'lower': np.array([0, 0, 0]), 'upper': np.array([180, 255, 30])},
     'orange': {'lower': np.array([0, 100, 100]), 'upper': np.array([15, 255, 255])},
     'pink': {'lower': np.array([160, 15, 140]), 'upper': np.array([180, 50, 255])},
     'blue': {'lower': np.array([100, 150, 50]), 'upper': np.array([130, 255, 255])},
     'green': {'lower': np.array([35, 30, 25]), 'upper': np.array([85, 255, 255])},
     'red': {'lower1': np.array([0, 120, 70]), 'upper1': np.array([0, 255, 255]),
                 'lower2': np.array([170, 170, 100]), 'upper2': np.array([179, 255, 255])},
-    'wine': {'lower': np.array([168, 50, 30]), 'upper': np.array([176, 180, 160])},
+    'wine': {'lower1': np.array([168, 50, 30]), 'upper1': np.array([180, 180, 160]),
+             'lower2': np.array([0, 50, 30]), 'upper2': np.array([2, 180, 160])},
     'yellow': {'lower': np.array([20, 100, 100]), 'upper': np.array([40, 255, 255])},
     'cyan': {'lower': np.array([90, 30, 70]), 'upper': np.array([115, 150, 230])}
 }
@@ -77,7 +78,7 @@ def fill_small_holes(mask, max_hole_size):
 def create_range_mask(hsv, color_name):
     color = color_ranges[color_name]
 
-    if color_name == 'red':
+    if color_name == 'red' or color_name == 'wine':
         mask1 = cv2.inRange(hsv, color['lower1'], color['upper1'])
         mask2 = cv2.inRange(hsv, color['lower2'], color['upper2'])
         mask = cv2.bitwise_or(mask1, mask2)
