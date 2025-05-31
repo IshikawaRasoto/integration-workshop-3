@@ -41,8 +41,8 @@ class NoteDetection:
                     frame = frame[:-10, 180:-240]
                     frame = self.calibration.apply_calibration(frame)
                     self.notes_detected = analisar_cores_com_mascaras(frame, True)
-                    print("Notas detectadas: ")
-                    print(self.notes_detected)
+                    # print("Notas detectadas: ")
+                    # print(self.notes_detected)
                 else:
                     print ("Falha ao acessar o frame")
             else:
