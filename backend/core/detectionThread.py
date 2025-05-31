@@ -20,7 +20,8 @@ class NoteDetection:
                 cv2.imwrite("board.jpg", frame)
                 if os.path.exists("board.jpg"):
                     self.notes_detected = analisar_cores_com_mascaras(frame)
-                    print ("Notas detectadas: " + self.notes_detected)
+                    print ("Notas detectadas: ")
+                    print(self.notes_detected)
                 else:
                     print ("Falha ao acessar o frame")
             else:

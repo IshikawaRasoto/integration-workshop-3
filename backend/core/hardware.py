@@ -1,10 +1,22 @@
-import RPi.GPIO as gpio
+# import RPi.GPIO as gpio
 import asyncio
 from core import session
 from api import manager
 
 BUTTON_GPIO_PINS = [2, 3, 4, 17, 27, 22, 10]
 SYSTEM_ON = True 
+
+main_event_loop = None
+api_manager = None
+
+def set_main_loop_and_manager(loop, manager_instance):
+    """
+    Called by main.py to provide the asyncio loop and API manager.
+    """
+    global main_event_loop, api_manager
+    main_event_loop = loop
+    api_manager = manager_instance
+    print("[Hardware] Main event loop and API manager have been set.")
 
 def turnOnLed(indexLed, color="GREEN"):
     print(f"Turning on led: {indexLed}. Color: {color}")
@@ -38,7 +50,7 @@ def reset_melody():
     session.select_melody(None)
 
 def button_callback(pin):
-    global SYSTEM_ON
+    global SYSTEM_ON, main_event_loop, api_manager
     try:
         button_index = BUTTON_GPIO_PINS.index(pin)
     except ValueError:
@@ -50,6 +62,11 @@ def button_callback(pin):
             emergency_off_actions()
         else:
             system_on_actions()
+
+        if api_manager and main_event_loop and main_event_loop.is_running():
+            asyncio.run_coroutine_threadsafe(api_manager.broadcast_state(), main_event_loop)
+            print("[Hardware] System ON/OFF state broadcast scheduled.")
+        
         return
 
     if not SYSTEM_ON:
@@ -87,25 +104,33 @@ def button_callback(pin):
         action_taken = True
 
     if action_taken:
-        loop = asyncio.get_event_loop()
-        if loop.is_running():
-            asyncio.run_coroutine_threadsafe(manager.broadcast_state(), loop)
-        else:
-            print("Error: Event loop not running, cannot broadcast hardware state.")
+        if api_manager and main_event_loop and main_event_loop.is_running():
+            future = asyncio.run_coroutine_threadsafe(api_manager.broadcast_state(), main_event_loop)
+            try:
+                future.result(timeout=1) # Wait for 1 second
+                print("[Hardware] Broadcast state successfully scheduled and completed from button callback.")
+            except asyncio.TimeoutError:
+                print("[Hardware] Warning: Broadcast state scheduling timed out.")
+            except Exception as e:
+                print(f"[Hardware] Error during broadcast_state: {e}")
+        elif not (api_manager and main_event_loop):
+            print("[Hardware] Error: API manager or event loop not set. Cannot broadcast.")
+        elif not main_event_loop.is_running():
+            print("[Hardware] Error: Event loop not running. Cannot broadcast.")
 
 
 # # Comentado para PC
 def setup_buttons():
     pass
-    gpio.setmode(gpio.BCM)
-    gpio.setwarnings(False)
+    # gpio.setmode(gpio.BCM)
+    # gpio.setwarnings(False)
 
-    for pin in BUTTON_GPIO_PINS:
-        if pin in BUTTON_GPIO_PINS[2:]:
-            gpio.setup(pin, gpio.IN, pull_up_down=gpio.PUD_UP)
-        else:
-            gpio.setup(pin, gpio.IN)
-        gpio.add_event_detect(pin, gpio.FALLING, callback=button_callback, bouncetime=300)
+    # for pin in BUTTON_GPIO_PINS:
+    #     if pin in BUTTON_GPIO_PINS[2:]:
+    #         gpio.setup(pin, gpio.IN, pull_up_down=gpio.PUD_UP)
+    #     else:
+    #         gpio.setup(pin, gpio.IN)
+    #     gpio.add_event_detect(pin, gpio.FALLING, callback=button_callback, bouncetime=300)
 
 try:
     setup_buttons()
@@ -117,20 +142,20 @@ except Exception as e:
 
 def cleanup_gpio():
     print("Cleaning up GPIO...")
-    gpio.cleanup()
+    # gpio.cleanup()
 
 # QUANDO IMPORTAR ISSO N VAI EXECUTAR
 if __name__ == '__main__':
-    # pass
-    # Comentado para PC
-    print("Loop de teste. Aperte Ctrl+C para sair.")
-    try:
-        while True:
-            if not SYSTEM_ON and gpio.input(BUTTON_GPIO_PINS[6]) == gpio.LOW: 
-                pass 
-    except KeyboardInterrupt:
-        print("Exiting test mode.")
-    finally:
-        cleanup_gpio()
+    pass
+    # # Comentado para PC
+    # print("Loop de teste. Aperte Ctrl+C para sair.")
+    # try:
+    #     while True:
+    #         if not SYSTEM_ON and gpio.input(BUTTON_GPIO_PINS[6]) == gpio.LOW: 
+    #             pass 
+    # except KeyboardInterrupt:
+    #     print("Exiting test mode.")
+    # finally:
+    #     cleanup_gpio()
 
 #TODO communication with esp32

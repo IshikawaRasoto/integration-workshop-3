@@ -3,7 +3,7 @@ import numpy as np
 import os
 import time
 from collections import defaultdict
-from noteParser import NoteParser
+from note_detection.noteParser import NoteParser
 
 # import matplotlib.pyplot as plt
 # import matplotlib
@@ -73,17 +73,24 @@ def fill_small_holes(mask, max_hole_size):
 
     return mask
 
-def create_color_masks(hsv,debug):
+def create_range_mask(hsv, color_name):
+    color = color_ranges[color_name]
+
+    if color_name == 'red':
+        mask1 = cv2.inRange(hsv, color['lower1'], color['upper1'])
+        mask2 = cv2.inRange(hsv, color['lower2'], color['upper2'])
+        mask = cv2.bitwise_or(mask1, mask2)
+    else:
+        mask = cv2.inRange(hsv, color['lower'], color['upper'])
+
+    return mask
+
+def create_color_masks(hsv, debug):
     height, width = hsv.shape[:2]
     color_masks = {color: np.zeros((height, width), dtype=np.uint8) for color in color_ranges}
 
-    for color_name, color in color_ranges.items():
-        if color_name == 'red':
-            mask1 = cv2.inRange(hsv, color['lower1'], color['upper1'])
-            mask2 = cv2.inRange(hsv, color['lower2'], color['upper2'])
-            mask = cv2.bitwise_or(mask1, mask2)
-        else:
-            mask = cv2.inRange(hsv, color['lower'], color['upper'])
+    for color_name in color_ranges.keys():
+        mask = create_range_mask(hsv, color_name)
 
         if debug:
             cv2.imwrite(f"{output_dir}/{color_name}/00-mask_color_range.jpg", mask)
