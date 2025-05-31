@@ -26,7 +26,7 @@ class NoteDetection:
                     print ("Falha ao acessar o frame")
             else:
                 pass
-                print("Erro ao acessar a câmera.")
+                # print("Erro ao acessar a câmera.")
             time.sleep(0.1)
         
     def get_notes_detected(self):
