@@ -1,10 +1,25 @@
-#TODO hardcode melodies (sequence of notes with duration)
+# Melodies
+
+ODE_ALEGRIA = [
+    ("C5#", "quarter"), ("C5#", "quarter"), ("D5", "quarter"), ("E5", "quarter"),
+    ("E5", "quarter"), ("D5", "quarter"), ("C5#", "quarter"), ("B4", "quarter"),
+    ("A4", "half"), ("R", ""), ("B4", "quarter"), ("C5#", "quarter"),
+    ("C5#", "half"), ("R", ""), ("B4", "half"), ("R", "")
+
+]
+
+CANON_IN_D = [
+    ("D5", "half"), ("R", ""), ("A4", "half"), ("R", ""),
+    ("B4", "half"), ("R", ""), ("F4#", "half"), ("R", ""),
+    ("G4", "half"), ("R", ""), ("D4", "half"), ("R", ""),
+    ("G4", "half"), ("R", ""), ("A4", "half"), ("R", "")
+]
 
 OVELHA_PRETA = [
-    ("G4", "quarter"), ("G4", "quarter"), ("D4", "quarter"), ("D4", "quarter"),
-    ("E4", "quarter"), ("E4", "quarter"), ("D4", "half"),    ("R", ""),
-    ("C4", "quarter"), ("C4", "quarter"), ("B3", "quarter"), ("B3", "quarter"),
-    ("A3", "quarter"), ("A3", "quarter"), ("G3", "half"),    ("R", "")
+    ("G4", "quarter"), ("G4", "quarter"), ("D5", "quarter"), ("D5", "quarter"),
+    ("E5", "quarter"), ("E5", "quarter"), ("D5", "half"),    ("R", ""),
+    ("C5", "quarter"), ("C5", "quarter"), ("B4", "quarter"), ("B4", "quarter"),
+    ("A4", "quarter"), ("A4", "quarter"), ("G4", "half"),    ("R", "")
 ]
 
 
