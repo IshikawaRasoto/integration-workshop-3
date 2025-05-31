@@ -18,6 +18,7 @@ class NoteDetection:
         self.cam.set(cv2.CAP_PROP_FRAME_WIDTH, desired_width)
         # Attempt to set the frame height
         self.cam.set(cv2.CAP_PROP_FRAME_HEIGHT, desired_height)
+        self.cam.set(cv2.CAP_PROP_BUFFERSIZE,1)
 
         self.calibration = Calibration()
         # self.calibration.points = [(255, 62), (219, 1020), (1351, 1038), (1361, 94)]
