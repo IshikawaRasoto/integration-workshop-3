@@ -84,12 +84,12 @@ def button_callback(pin):
         action_taken = True
     elif button_index == 2: # Volume +
         current_volume = session.state.volume
-        session.set_volume(min(100, current_volume + 10))
+        session.set_volume(min(100, current_volume + 5))
         print(f"Volume increased to {session.state.volume}% via hardware button.")
         action_taken = True
     elif button_index == 3: # Volume -
         current_volume = session.state.volume
-        session.set_volume(max(0, current_volume - 10))
+        session.set_volume(max(0, current_volume - 5))
         print(f"Volume decreased to {session.state.volume}% via hardware button.")
         action_taken = True
     elif button_index == 4: # Tempo +
