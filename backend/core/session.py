@@ -19,8 +19,6 @@ state = PlayerState()
 
 def set_volume(value: int) -> None:
     volume = max(0, min(100, value)) # 0-100
-
-    #TODO  INCREASE VOLUME ON SPEAKER
     state.volume = volume # 0-100
     print(state.volume)
 
@@ -35,14 +33,21 @@ def start_playback() -> None:
 
 def stop_playback() -> None:
     state.playing = False
+    #TODO FAZER ZERAR TUDO
+    set_note_index(0)
     print(state.playing)
     
 def select_melody(name: str) -> None:
     state.melody = name
     if name == "Ovelha Preta":
         state.note, _ = OVELHA_PRETA[0]
+    elif name == "Ode Alegria":
+        state.note, _ = ODE_ALEGRIA[0]
+    elif name == "Canon in D":
+        state.note, _ = CANON_IN_D[0]
     else:
         state.note = None
+    stop_playback()
     print(f"On select_melody {state.melody}  {state.note}")
 
 def set_page(name: str) -> None:
@@ -65,7 +70,10 @@ async def play_current_melody_note() -> None:
     if state.note:
         if state.melody == "Ovelha Preta":
             note, duration = OVELHA_PRETA[state.note_index]
-        #TODO Two more melodies
+        elif state.melody == "Ode Alegria":
+            note, duration = ODE_ALEGRIA[state.note_index]
+        elif state.melody == "Canon in D":
+            note, duration = CANON_IN_D[state.note_index]
 
         if duration == "quarter":
             await play_note_async(note, 1)
@@ -73,7 +81,6 @@ async def play_current_melody_note() -> None:
             await play_note_async(note, 2)
         elif duration == "whole":
             await play_note_async(note,4)
-
 
 def as_dict() -> dict:
     return {
