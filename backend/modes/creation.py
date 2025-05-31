@@ -1,7 +1,8 @@
 import asyncio
 import time
 import sounddevice as sd
-from core import session, hardware, noteDetection, soundPlaying
+from core import detectionThread
+from core import session, hardware, soundPlaying
 from core.utils import *
 
 beats = 0

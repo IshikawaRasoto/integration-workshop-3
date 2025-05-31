@@ -3,7 +3,7 @@ import uvicorn
 import importlib
 import threading
 from core import session
-from core.noteDetection import NoteDetection
+from core.detectionThread import NoteDetection
 
 # Mapping between page values and their corresponding mode modules
 MODE_MODULES = {
