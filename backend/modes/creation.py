@@ -4,21 +4,23 @@ import sounddevice as sd
 from core import detectionThread
 from core import session, hardware, soundPlaying
 from core.utils import *
+from core.detectionThread import NoteDetection
 
 beats = 0
 lastColumnIndex = None  
 detect_task = None
 
 async def run_mode():
+    thread =  NoteDetection()
     global beats, lastColumnIndex
     start_time = time.time()
-
-    #notes_and_durations = 
-    notes_and_durations = OVELHA_PRETA      #TODO mocking, update for real notes Detected
 
     print("[CreationMode] Entered Creation Mode")
     try:
         while session.state.page == "creation":
+
+            notes_and_durations = thread.get_notes_detected()
+
             if session.state.playing:
 
                 elapsed = time.time() - start_time
@@ -35,7 +37,6 @@ async def run_mode():
                 hardware.turnOnLed(columnIndex)  
                 lastColumnIndex = columnIndex
                 
-                # TODO: Play the note corresponding to the current column, with not updated list
                 note, duration = notes_and_durations[columnIndex]
                 _, duration1 = notes_and_durations[columnIndex - 1]
                 _, duration2 = notes_and_durations[columnIndex - 2]
