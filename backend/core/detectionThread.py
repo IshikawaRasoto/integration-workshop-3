@@ -11,9 +11,6 @@ class NoteDetection:
         self.running = True
         self.cam = cv2.VideoCapture(2) #TODO change this value to 0 later 
 
-        self.calibration = Calibration()
-        self.calibration.points = [(255, 59), (290, 966), (1348, 1041), (1361, 95)]
-
         desired_width = 1920
         desired_height = 1080
 
@@ -22,6 +19,9 @@ class NoteDetection:
         # Attempt to set the frame height
         self.cam.set(cv2.CAP_PROP_FRAME_HEIGHT, desired_height)
 
+        self.calibration = Calibration()
+        self.calibration.points = [(255, 62), (219, 1020), (1351, 1038), (1361, 94)]
+        
         self.run = 0
     
     def detect_note_loop(self):

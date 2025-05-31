@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
 
-from note_detection import create_range_mask
-from warp_perspective import warp_perspective_to_rect
+from note_detection.note_detection import create_range_mask
+from note_detection.warp_perspective import warp_perspective_to_rect
 
 class Calibration:
     def __init__(self):
@@ -32,9 +32,9 @@ class Calibration:
 
         for c in contours:
             peri = cv2.arcLength(c, True)
-            approx = cv2.approxPolyDP(c, 0.015 * peri, True)
+            approx = cv2.approxPolyDP(c, 0.055 * peri, True)
             area = cv2.contourArea(c)
-            if len(approx) == 4 and 20 <= area <= 500:
+            if len(approx) == 4 and 200 <= area <= 700:
                 x,y,w,h = cv2.boundingRect(approx)
 
                 # Top-left check: smallest (x+y)

@@ -3,7 +3,7 @@ import numpy as np
 import os
 import time
 from collections import defaultdict
-from noteParser import NoteParser
+from note_detection.noteParser import NoteParser
 
 # import matplotlib.pyplot as plt
 # import matplotlib
@@ -19,8 +19,8 @@ color_ranges = {
     'blue': {'lower': np.array([100, 150, 50]), 'upper': np.array([130, 255, 255])},
     'green': {'lower': np.array([35, 30, 25]), 'upper': np.array([85, 255, 255])},
     'red': {'lower1': np.array([0, 120, 70]), 'upper1': np.array([0, 255, 255]),
-                'lower2': np.array([170, 120, 100]), 'upper2': np.array([179, 255, 255])},
-    'wine': {'lower': np.array([168, 50, 30]), 'upper': np.array([176, 180, 120])},
+                'lower2': np.array([170, 170, 100]), 'upper2': np.array([179, 255, 255])},
+    'wine': {'lower': np.array([168, 50, 30]), 'upper': np.array([176, 180, 160])},
     'yellow': {'lower': np.array([20, 100, 100]), 'upper': np.array([40, 255, 255])},
     'cyan': {'lower': np.array([90, 30, 70]), 'upper': np.array([115, 150, 230])}
 }
@@ -48,7 +48,7 @@ def create_circles_mask(bit_mask):
     compressed_mask = cv2.resize(bit_mask, None, fx=0.7, fy=1., interpolation=cv2.INTER_AREA)
     original_height, original_width = bit_mask.shape[:2]
 
-    circles = cv2.HoughCircles(compressed_mask, cv2.HOUGH_GRADIENT_ALT, 1, 20, param1=300, param2=0.8, minRadius=20, maxRadius=100)
+    circles = cv2.HoughCircles(compressed_mask, cv2.HOUGH_GRADIENT_ALT, 1, 20, param1=300, param2=0.7, minRadius=20, maxRadius=200)
 
     if circles is not None:
         mask = np.zeros(compressed_mask.shape[:2], dtype=np.uint8)
@@ -158,7 +158,7 @@ def analisar_cores_com_mascaras(frame_to_analyze, debug=False):
     found_notes = frame.copy()
 
     start_pos = (57, 60)
-    dx = 65.5
+    dx = 66.5
     dy = 46.5
 
     bar_dx = 274
