@@ -69,7 +69,7 @@ async def main():
 
     mode_manager_instance = ModeManager()
     try:
-        await manager.monitor_state()
+        await mode_manager_instance.monitor_state()
     finally:
         await server.shutdown()
         api_task.cancel()
