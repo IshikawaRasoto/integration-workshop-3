@@ -1,5 +1,7 @@
 import RPi.GPIO as gpio
+import asyncio
 from core import session
+from api import manager
 
 BUTTON_GPIO_PINS = [2, 3, 4, 17, 27, 22, 10]
 SYSTEM_ON = True 
@@ -54,28 +56,44 @@ def button_callback(pin):
         print("System is OFF. Press Button 7 to turn ON.")
         return
 
+    action_taken = False
     if button_index == 0: # Play
         session.start_playback()
         print("Playback started via hardware button.")
+        action_taken = True
     elif button_index == 1: # Stop
         session.stop_playback()
         print("Playback stopped via hardware button.")
+        action_taken = True
     elif button_index == 2: # Volume +
         current_volume = session.state.volume
         session.set_volume(min(100, current_volume + 10))
         print(f"Volume increased to {session.state.volume}% via hardware button.")
+        action_taken = True
     elif button_index == 3: # Volume -
         current_volume = session.state.volume
         session.set_volume(max(0, current_volume - 10))
         print(f"Volume decreased to {session.state.volume}% via hardware button.")
+        action_taken = True
     elif button_index == 4: # Tempo +
         current_tempo = session.state.tempo
         session.set_tempo(min(120, current_tempo + 30))
         print(f"Tempo increased to {session.state.tempo} BPM via hardware button.")
+        action_taken = True
     elif button_index == 5: # Tempo -
         current_tempo = session.state.tempo
         session.set_tempo(max(60, current_tempo - 30))
         print(f"Tempo decreased to {session.state.tempo} BPM via hardware button.")
+        action_taken = True
+
+    if action_taken:
+        loop = asyncio.get_event_loop()
+        if loop.is_running():
+            asyncio.run_coroutine_threadsafe(manager.broadcast_state(), loop)
+        else:
+            print("Error: Event loop not running, cannot broadcast hardware state.")
+
+
 # # Comentado para PC
 def setup_buttons():
     pass
