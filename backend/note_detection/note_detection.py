@@ -3,7 +3,7 @@ import numpy as np
 import os
 import time
 from collections import defaultdict
-from noteParser import NoteParser
+from note_detection.noteParser import NoteParser
 
 # import matplotlib.pyplot as plt
 # import matplotlib
@@ -13,7 +13,7 @@ output_dir = "color_analysis_output"
 
 # Definindo os intervalos de cores no espaço HSV
 color_ranges = {
-    'black': {'lower': np.array([0, 0, 0]), 'upper': np.array([180, 255, 50])},
+    'black': {'lower': np.array([0, 0, 0]), 'upper': np.array([180, 255, 70])},
     'orange': {'lower': np.array([0, 100, 100]), 'upper': np.array([15, 255, 255])},
     'pink': {'lower': np.array([160, 15, 140]), 'upper': np.array([180, 50, 255])},
     'blue': {'lower': np.array([100, 150, 50]), 'upper': np.array([130, 255, 255])},
@@ -46,6 +46,7 @@ def find_predominant_color_in_rectangle(color_masks, top_left, bot_right):
         
 def create_circles_mask(bit_mask):
     compressed_mask = cv2.resize(bit_mask, None, fx=0.7, fy=1., interpolation=cv2.INTER_AREA)
+    original_height, original_width = bit_mask.shape[:2]
 
     circles = cv2.HoughCircles(compressed_mask, cv2.HOUGH_GRADIENT_ALT, 1, 20, param1=300, param2=0.8, minRadius=20, maxRadius=100)
 
@@ -56,7 +57,7 @@ def create_circles_mask(bit_mask):
         for i in circles[0,:]:
             cv2.circle(mask, i[:2], i[2], 255, -1)
 
-        return cv2.resize(mask, None, fx=1/0.7, fy=1., interpolation=cv2.INTER_AREA)
+        return cv2.resize(mask, (original_width, original_height), interpolation=cv2.INTER_AREA)
     else:
         return np.full(bit_mask.shape[:2], 255, dtype=np.uint8)
 
@@ -116,6 +117,7 @@ def create_color_masks(hsv, debug):
         if debug:
             cv2.imwrite(f"{output_dir}/{color_name}/04-mask-circles.jpg", mask_c)
 
+    
         mask = cv2.bitwise_and(mask, mask_c)
 
         color_masks[color_name] = mask
@@ -155,19 +157,22 @@ def analisar_cores_com_mascaras(frame_to_analyze, debug=False):
     # Cria uma cópia para escrever as notas encontradas
     found_notes = frame.copy()
 
-    dx = 88
-    dy = 64
+    start_pos = (57, 60)
+    dx = 65.5
+    dy = 46.5
+
+    bar_dx = 274
+    bar_dy = 0
 
     note_parser = NoteParser()
 
-    start_pos = (152, 57)
     for b in range(0, 4):
-        p = (start_pos[0] + b*376, start_pos[1] + b*0)
+        p = (start_pos[0] + b*bar_dx, start_pos[1] + b*bar_dy)
         for i in range(0, 19):
             for j in range(0, 4):
-                current_pos = (p[0] + j*dx, p[1] + i*dy)
-                top_left = (current_pos[0] - dx//2, current_pos[1] - dy//2)
-                bot_right = (current_pos[0] + dx//2, current_pos[1] + dy//2)
+                current_pos = (p[0] + int(j*dx), p[1] + int(i*dy))
+                top_left = (current_pos[0] - int(dx)//2, current_pos[1] - int(dy)//2)
+                bot_right = (current_pos[0] + int(dx)//2, current_pos[1] + int(dy)//2)
 
                 predominant_color = find_predominant_color_in_rectangle(color_masks, top_left, bot_right) or 'None'
 

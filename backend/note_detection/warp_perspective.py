@@ -42,11 +42,12 @@ def warp_perspective_to_rect(image, points):
     maxHeight = int(max(heightA, heightB))
 
     # Destination rectangle
+    delta = 50
     dst = np.array([
-        [0, 0],
-        [maxWidth - 1, 0],
-        [maxWidth - 1, maxHeight - 1],
-        [0, maxHeight - 1]
+        [delta, delta],
+        [maxWidth - 1 - delta, delta],
+        [maxWidth - 1 - delta, maxHeight - 1 - delta],
+        [delta, maxHeight - 1 - delta]
     ], dtype="float32")
 
     # Compute the perspective transform matrix
@@ -57,7 +58,8 @@ def warp_perspective_to_rect(image, points):
 
     return warped
 
-image = cv2.imread('board.png')
-points = [[100, 200], [400, 180], [420, 500], [120, 520]]  # your 4 points
-warped = warp_perspective_to_rect(image, points)
-cv2.imwrite('warped_board.png', warped)
+if __name__ == '__main__':
+    image = cv2.imread('board.png')
+    points = [[100, 200], [400, 180], [420, 500], [120, 520]]  # your 4 points
+    warped = warp_perspective_to_rect(image, points)
+    cv2.imwrite('warped_board.png', warped)
