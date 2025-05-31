@@ -3,7 +3,7 @@ import numpy as np
 import os
 import time
 from collections import defaultdict
-from note_detection.noteParser import NoteParser
+from noteParser import NoteParser
 
 # import matplotlib.pyplot as plt
 # import matplotlib
