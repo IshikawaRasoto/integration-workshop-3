@@ -12,7 +12,7 @@ class NoteDetection:
         self.cam = cv2.VideoCapture(2) #TODO change this value to 0 later 
 
         self.calibration = Calibration()
-        self.calibration.points = [(263, 64), (227, 1022), (1362, 1042), (1371, 94)]
+        self.calibration.points = [(255, 59), (290, 966), (1348, 1041), (1361, 95)]
 
         desired_width = 1920
         desired_height = 1080

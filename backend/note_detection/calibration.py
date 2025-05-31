@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
 
-from note_detection.note_detection import create_range_mask
-from note_detection.warp_perspective import warp_perspective_to_rect
+from note_detection import create_range_mask
+from warp_perspective import warp_perspective_to_rect
 
 class Calibration:
     def __init__(self):
