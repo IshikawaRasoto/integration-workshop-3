@@ -1,4 +1,4 @@
-# import RPi.GPIO as gpio
+import RPi.GPIO as gpio
 from core import session
 
 BUTTON_GPIO_PINS = [2, 3, 4, 17, 27, 22, 10]
@@ -79,15 +79,15 @@ def button_callback(pin):
 # # Comentado para PC
 def setup_buttons():
     pass
-#     gpio.setmode(gpio.BCM)
-#     gpio.setwarnings(False)
+    gpio.setmode(gpio.BCM)
+    gpio.setwarnings(False)
 
-#     for pin in BUTTON_GPIO_PINS:
-#         if pin in BUTTON_GPIO_PINS[2:]:
-#             gpio.setup(pin, gpio.IN, pull_up_down=gpio.PUD_UP)
-#         else:
-#             gpio.setup(pin, gpio.IN)
-#         gpio.add_event_detect(pin, gpio.FALLING, callback=button_callback, bouncetime=300)
+    for pin in BUTTON_GPIO_PINS:
+        if pin in BUTTON_GPIO_PINS[2:]:
+            gpio.setup(pin, gpio.IN, pull_up_down=gpio.PUD_UP)
+        else:
+            gpio.setup(pin, gpio.IN)
+        gpio.add_event_detect(pin, gpio.FALLING, callback=button_callback, bouncetime=300)
 
 try:
     setup_buttons()
@@ -99,20 +99,20 @@ except Exception as e:
 
 def cleanup_gpio():
     print("Cleaning up GPIO...")
-    # gpio.cleanup()
+    gpio.cleanup()
 
 # QUANDO IMPORTAR ISSO N VAI EXECUTAR
 if __name__ == '__main__':
-    pass
-    # # Comentado para PC
-    # print("Loop de teste. Aperte Ctrl+C para sair.")
-    # try:
-    #     while True:
-    #         if not SYSTEM_ON and gpio.input(BUTTON_GPIO_PINS[6]) == gpio.LOW: 
-    #             pass 
-    # except KeyboardInterrupt:
-    #     print("Exiting test mode.")
-    # finally:
-    #     cleanup_gpio()
+    # pass
+    # Comentado para PC
+    print("Loop de teste. Aperte Ctrl+C para sair.")
+    try:
+        while True:
+            if not SYSTEM_ON and gpio.input(BUTTON_GPIO_PINS[6]) == gpio.LOW: 
+                pass 
+    except KeyboardInterrupt:
+        print("Exiting test mode.")
+    finally:
+        cleanup_gpio()
 
 #TODO communication with esp32
