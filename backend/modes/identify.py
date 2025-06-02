@@ -34,8 +34,8 @@ async def run_mode():
 
                 if session.state.note != expected_note or session.state.note_duration_display != target_duration_display:
                     session.set_current_note_and_duration_for_display(expected_note, expected_duration)
+                    await hardware.api_manager.broadcast_state()
 
-                # TODO: Read current note from melody using note_index
                 # TODO: Use noteDetection to read placed note
                 # TODO: Compare detected note to expected note
 

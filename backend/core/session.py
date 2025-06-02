@@ -77,6 +77,10 @@ def set_note(note: str) -> None:
     state.note = note 
     print(f"On set_note {state}")
 
+def set_duration(duration: str) -> None:
+    state.duration = duration 
+    print(f"On set_note {state}")
+
 def set_note_index(idx: int) -> None:
     state.note_index = idx 
     print(f"On set_note_index {state}")
