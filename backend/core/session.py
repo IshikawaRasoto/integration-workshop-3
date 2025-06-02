@@ -50,7 +50,7 @@ def stop_playback() -> None:
     # set_note_index(0)
     state.note = None
     state.note_duration_display = None
-    print(f"On stop_playback, is playing: {state.playing}")
+    # print(f"On stop_playback, is playing: {state.playing}")
     
 def select_melody(name: str) -> None:
     stop_playback()

@@ -1,10 +1,12 @@
 import asyncio
-from core import session, utils
-from core import hardware
+from core import session, utils, hardware
+from core.globals import note_detect_obj
 
 async def run_mode():
-    feedback_led_index = 0  # Using LED 0 for general feedback
-    previous_led_color = None # To track current LED state
+    current_board_column_index = 0
+    previous_playing_state = False
+    session.set_note_index(0)
+    note_idx = 0
 
     # Melody data mapping
     melodies = {
@@ -16,38 +18,88 @@ async def run_mode():
     print("[IdentifyMode] Entered Identify Note Mode")
     try:
         while session.state.page == "identify":
-            while(session.state.playing and session.state.melody is not None):
-                print("loop")
-                current_melody_data = melodies[session.state.melody]
-                note_idx = session.state.note_index
-
-                if note_idx >= 16:
-                    if previous_led_color:
-                        hardware.turnOffLed(feedback_led_index)
-                        previous_led_color = None
-                    await asyncio.sleep(1)
-                    #TODO tocar a melodia a um bpm fixo
+            if(session.state.playing and session.state.melody is not None):
                 
-                expected_note, expected_duration = current_melody_data[note_idx]
-                session.set_current_note_and_duration_for_display(expected_note, expected_duration)
-                target_duration_display = session.get_duration_display_name(expected_duration)
+                note_idx = session.state.note_index
+                current_melody_data = melodies.get(session.state.melody)
 
-                if session.state.note != expected_note or session.state.note_duration_display != target_duration_display:
-                    session.set_current_note_and_duration_for_display(expected_note, expected_duration)
+                expected_note_name, expected_duration = current_melody_data[note_idx]
+                session.set_current_note_and_duration_for_display(expected_note_name, expected_duration)
+                if not previous_playing_state: 
+                    if note_idx == 0: 
+                        current_board_column_index = 0
+
+                previous_playing_state = True
+
+                detected_notes_on_board = note_detect_obj.get_notes_detected()
+                detected_note_name, detected_duration = detected_notes_on_board[current_board_column_index]
+
+                if detected_note_name == "None" or detected_note_name is None:
+                    hardware.turnOnLed(current_board_column_index, color="YELLOW")
+                    
+                # Correct Note and Duration
+                elif detected_note_name == expected_note_name and detected_duration == expected_duration:
+                    # Feedback to user
+                    hardware.turnOnLed(current_board_column_index, color="GREEN")
+                    if session.state.accessibility:
+                        print("Command esp to vibrate ONCE")
+                        #TODO
+
+                    # Goes to next column
+                    expected_duration_value = get_duration_value(expected_duration)
+                    session.set_note_index(note_idx + expected_duration_value)
+                    current_board_column_index += expected_duration_value
+
+                    if current_board_column_index >= 16:
+                        reset_game()
+                        #TODO play async the melody
+                        await asyncio.sleep(8)          # Time to play the melody
+                        continue
+
                     await hardware.api_manager.broadcast_state()
+                    await asyncio.sleep(3) 
 
-                # TODO: Use noteDetection to read placed note
-                # TODO: Compare detected note to expected note
+                # Wrong Note and Duration
+                else: 
+                    # Feedback to user
+                    hardware.turnOnLed(current_board_column_index, color="RED")
+                    if session.state.accessibility:
+                        print("Command esp to vibrate TWICE")
+                        #TODO
+                
+                await asyncio.sleep(0.5) 
 
-                # TODO: Green LED if correct, advance index
-                # TODO: Red LED if incorrect
-                # TODO: Yellow LED if nothing detected
-                await asyncio.sleep(0.5) # NECESSARY TO DO THE OTHER TASKS (ModeManager etc)
-            await asyncio.sleep(1) # NECESSARY TO DO THE OTHER TASKS (ModeManager etc)
+            else: 
+                current_board_column_index = 0
+                previous_playing_state = False
+                reset_game()
+                await hardware.api_manager.broadcast_state()
+                await asyncio.sleep(1)
 
 
-    except asyncio.CancelledError: # when ModeManager does .cancel()
+    except asyncio.CancelledError:
+        hardware.turnOffAllLeds()
         print("[IdentifyMode] Exited Identify Note Mode")
         raise
-        
 
+def get_duration_value(duration_string: str):
+    if duration_string == "quarter":
+        return 1
+    elif duration_string == "half":
+        return 2
+    elif duration_string == "whole":
+        return 4
+    return 0
+
+def reset_game():
+    print("reset")
+    hardware.turnOffAllLeds()
+    session.stop_playback()
+    session.set_note_index(0)
+    if session.state.melody:
+        session.select_melody(session.state.melody)
+    else: 
+        session.set_current_note_and_duration_for_display(None, None)
+        print("entered here")
+
+    hardware.api_manager.broadcast_state()

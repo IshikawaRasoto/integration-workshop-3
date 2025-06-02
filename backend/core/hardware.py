@@ -20,9 +20,15 @@ def set_main_loop_and_manager(loop, manager_instance):
 
 def turnOnLed(indexLed, color="GREEN"):
     print(f"Turning on led: {indexLed}. Color: {color}")
+    #TODO
 
 def turnOffLed(indexLed):
     print(f"Turning off led: {indexLed}")
+    #TODO
+
+def turnOffAllLeds():
+    print(f"Turning off all leds")
+    #TODO
 
 def emergency_off_actions():
     #TODO RESETAR A RASPBERRY
