@@ -21,9 +21,9 @@ state = PlayerState()
 
 def get_duration_display_name(duration_code: Optional[str]) -> Optional[str]:
     if duration_code == "quarter":
-        return "Semimínima"
+        return "Semiminima"
     elif duration_code == "half":
-        return "Mínima"
+        return "Minima"
     elif duration_code == "whole":
         return "Semibreve"
     elif duration_code == "": #

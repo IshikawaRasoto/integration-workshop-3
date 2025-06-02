@@ -46,10 +46,18 @@ function applyStateToDOM(s) {
 
     const durationDisplayElement = document.getElementById("currentDurationDisplay");
     if (durationDisplayElement && (s.page === "hear" || s.page === "identify")) {
-        durationDisplayElement.textContent = s.note_duration_display ? s.note_duration_display : "-";
+        let displayText = "-"; 
+        if (s.note_duration_display === "Semiminima") { 
+            displayText = "Semimínima"; 
+        } else if (s.note_duration_display === "Minima") { 
+            displayText = "Mínima"; 
+        } else if (s.note_duration_display === "Semibreve") {
+            displayText = "Semibreve"; 
+        } 
+        durationDisplayElement.textContent = displayText;
     }
 
-    // Ensure the main note display also handles null gracefully (it already seems to with s.note ? s.note : "-")
+    // Ensure the main note display also handles null gracefully 
     const currentNoteDisplayElement = document.getElementById("currentNoteDisplay");
     if (currentNoteDisplayElement && (s.page === "hear" || s.page === "identify")) {
         currentNoteDisplayElement.textContent = s.note ? s.note : "-";
