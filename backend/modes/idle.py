@@ -9,6 +9,7 @@ async def run_mode():
         while session.state.page == "home":
             if session.state.accessibility:
                 print("Turn on ESP32 Communication")  # TODO: esp32 logic
+            session.stop_playback()
             await asyncio.sleep(1)
 
     except asyncio.CancelledError: # when ModeManager does .cancel()

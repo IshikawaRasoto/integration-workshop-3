@@ -1,7 +1,17 @@
 import asyncio
-from core import session
+from core import session, utils
 
 async def run_mode():
+    feedback_led_index = 0  # Using LED 0 for general feedback
+    previous_led_color = None # To track current LED state
+
+    # Melody data mapping
+    melodies = {
+        "Ovelha Preta": utils.OVELHA_PRETA,
+        "Ode Alegria": utils.ODE_ALEGRIA,
+        "Canon in D": utils.CANON_IN_D
+    }
+
     print("[HearMode] Entered Hear Note Mode")
     try:
         while (session.state.page == "hear"):

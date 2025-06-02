@@ -38,16 +38,22 @@ function applyStateToDOM(s) {
     const m = document.getElementById("musicSelect");
     if (m && s.melody) m.value = s.melody;
 
-    const currentNoteDisplayElement = document.getElementById("currentNoteDisplay");
-    if (currentNoteDisplayElement && (s.page === "hear" || s.page === "identify") && typeof s.note !== 'undefined') {
-        currentNoteDisplayElement.textContent = s.note ? s.note : "-";
-    }
-
     const n = document.getElementById("currentNote");
     if (n && s.current_note) n.textContent = s.current_note;
 
     const sw = document.getElementById("accessibilityToggle");
     if (sw && typeof s.accessibility === "boolean") sw.checked = s.accessibility;
+
+    const durationDisplayElement = document.getElementById("currentDurationDisplay");
+    if (durationDisplayElement && (s.page === "hear" || s.page === "identify")) {
+        durationDisplayElement.textContent = s.note_duration_display ? s.note_duration_display : "-";
+    }
+
+    // Ensure the main note display also handles null gracefully (it already seems to with s.note ? s.note : "-")
+    const currentNoteDisplayElement = document.getElementById("currentNoteDisplay");
+    if (currentNoteDisplayElement && (s.page === "hear" || s.page === "identify")) {
+        currentNoteDisplayElement.textContent = s.note ? s.note : "-";
+    }
 }
 
 function maybeRedirectPage(s) {
