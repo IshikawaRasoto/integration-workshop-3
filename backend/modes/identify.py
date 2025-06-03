@@ -45,11 +45,6 @@ async def run_mode():
                         print("Command esp to vibrate ONCE")
                         #TODO
 
-                    # Goes to next column
-                    expected_duration_value = get_duration_value(expected_duration)
-                    session.set_note_index(note_idx + expected_duration_value)
-                    current_board_column_index += expected_duration_value
-
                     if current_board_column_index >= 16:
                         reset_game()
                         #TODO play async the melody
@@ -58,6 +53,12 @@ async def run_mode():
 
                     await hardware.api_manager.broadcast_state()
                     await asyncio.sleep(3) 
+                    
+                    # Goes to next column
+                    expected_duration_value = get_duration_value(expected_duration)
+                    session.set_note_index(note_idx + expected_duration_value)
+                    current_board_column_index += expected_duration_value
+                    continue
 
                 # Wrong Note and Duration
                 else: 
@@ -67,7 +68,7 @@ async def run_mode():
                         print("Command esp to vibrate TWICE")
                         #TODO
                 
-                await asyncio.sleep(0.5) 
+                await asyncio.sleep(3) 
 
             else: 
                 current_board_column_index = 0

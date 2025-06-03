@@ -83,7 +83,7 @@ def set_duration(duration: str) -> None:
 
 def set_note_index(idx: int) -> None:
     state.note_index = idx 
-    print(f"On set_note_index {state}")
+    # print(f"On set_note_index {state}")
 
 def set_accessibility(flag: bool) -> None:        
     state.accessibility = bool(flag)
@@ -109,6 +109,7 @@ async def play_current_melody_note() -> None:
             await play_note_async(note, 2)
         elif duration == "whole":
             await play_note_async(note,4)
+        print(f"Note {note}, Duration: {duration} on note_idx {state.note_index}")
 
 def as_dict() -> dict:
     return {
