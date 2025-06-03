@@ -26,7 +26,6 @@ async def run_mode():
 
             notes_and_durations = note_detect_obj.get_notes_detected()
             
-
             if session.state.playing:
 
                 elapsed = time.time() - start_time
@@ -40,6 +39,8 @@ async def run_mode():
                 if columnIndex == 0 and beats != 0:
                     await asyncio.sleep(1.5)  #little delay to start again
 
+                if session.state.accessibility:
+                    creationCommandEsp(columnIndex)
                 hardware.turnOnLed(columnIndex)  
                 lastColumnIndex = columnIndex
                 #print(notes_and_durations[columnIndex])
@@ -84,3 +85,16 @@ def get_duration_value(duration_string):
         return 4
     else:
         return 0
+
+def creationCommandEsp(columnIndex):
+    if (columnIndex % 4) == 0:
+        if columnIndex == 0:
+            print("Send vibration and servo 0")
+        elif columnIndex == 4:
+            print("Send vibration and servo 1")
+        elif columnIndex == 8:
+            print("Send vibration and servo 2")
+        elif columnIndex == 12:
+            print("Send vibration and servo 3")
+    else:
+        print("Send only vibration")
