@@ -1,9 +1,22 @@
-# import RPi.GPIO as gpio
+import RPi.GPIO as gpio
+import time
 import asyncio
 from core import session
 from api import manager
 
-BUTTON_GPIO_PINS = [2, 3, 4, 17, 27, 22, 10]
+# Pinos de saida dos DEMUX
+GREEN_OUTPUT_PIN = 0
+RED_OUTPUT_PIN = 5
+
+# Pinos de endereçamento (4 bits: A0, A1, A2, A3)
+GREEN_ADDRESS_PINS = [22, 10, 9, 11]
+RED_ADDRESS_PINS = [6, 13, 19, 26]
+
+# Mapeamento de LED para pino do DEMUX
+RED_MAP = [15,7,11,3,14,6,10,2,1,9,5,13,0,8,4,12]
+GREEN_MAP = [2,10,6,14,3,11,7,15,12,4,8,0,13,5,9,1]
+
+BUTTON_GPIO_PINS = [21, 20, 16, 12, 1, 7, 8]
 SYSTEM_ON = True 
 
 main_event_loop = None
@@ -18,17 +31,50 @@ def set_main_loop_and_manager(loop, manager_instance):
     api_manager = manager_instance
     print("[Hardware] Main event loop and API manager have been set.")
 
+# Função para selecionar um canal (0 a 15)
+def set_address(channel):
+    if channel < 0 or channel > 15:
+        print("Canal inválido! Use 0-15.")
+        return
+    
+    # Converter o número do canal para binário (4 bits)
+    red_bits = [int(bit) for bit in format(RED_MAP[channel], '04b')]
+    green_bits = [int(bit) for bit in format(GREEN_MAP[channel], '04b')]
+
+    # Aplicar os bits aos pinos de endereço
+    for i, pin in enumerate(RED_ADDRESS_PINS):
+        gpio.output(pin, red_bits[i])
+
+    for i, pin in enumerate(GREEN_ADDRESS_PINS):
+        gpio.output(pin, green_bits[i])
+
 def turnOnLed(indexLed, color="GREEN"):
     print(f"Turning on led: {indexLed}. Color: {color}")
-    #TODO
+    set_address(indexLed)
+    if color.upper() == "GREEN":
+        gpio.output(GREEN_OUTPUT_PIN, gpio.LOW)
+        gpio.output(RED_OUTPUT_PIN, gpio.HIGH)
+    elif color.upper() == "RED":
+        gpio.output(RED_OUTPUT_PIN, gpio.LOW)
+        gpio.output(GREEN_OUTPUT_PIN, gpio.HIGH)
+    elif color.upper() == "YELLOW":
+        gpio.output(RED_OUTPUT_PIN, gpio.LOW)
+        gpio.output(GREEN_OUTPUT_PIN, gpio.LOW)
+    else: # Off for unknown colors or "None"
+        gpio.output(RED_OUTPUT_PIN, gpio.HIGH)
+        gpio.output(GREEN_OUTPUT_PIN, gpio.HIGH)
+
 
 def turnOffLed(indexLed):
     print(f"Turning off led: {indexLed}")
-    #TODO
+    # Setting both to HIGH effectively disables the output of the demux
+    gpio.output(RED_OUTPUT_PIN, gpio.HIGH)
+    gpio.output(GREEN_OUTPUT_PIN, gpio.HIGH)
 
 def turnOffAllLeds():
     print(f"Turning off all leds")
-    #TODO
+    gpio.output(RED_OUTPUT_PIN, gpio.HIGH)
+    gpio.output(GREEN_OUTPUT_PIN, gpio.HIGH)
 
 def emergency_off_actions():
     #TODO RESETAR A RASPBERRY
@@ -36,8 +82,7 @@ def emergency_off_actions():
     global SYSTEM_ON
     SYSTEM_ON = False
     print("System OFF ")
-    for i in range(16): # Assuming 16 LEDs
-        turnOffLed(i)
+    turnOffAllLeds()
 
 def system_on_actions():
     global SYSTEM_ON
@@ -125,21 +170,27 @@ def button_callback(pin):
             print("[Hardware] Error: Event loop not running. Cannot broadcast.")
 
 
-# # Comentado para PC
-def setup_buttons():
-    pass
-    # gpio.setmode(gpio.BCM)
-    # gpio.setwarnings(False)
+def setup():
+    gpio.setmode(gpio.BCM)
+    gpio.setwarnings(False)
 
-    # for pin in BUTTON_GPIO_PINS:
-    #     if pin in BUTTON_GPIO_PINS[2:]:
-    #         gpio.setup(pin, gpio.IN, pull_up_down=gpio.PUD_UP)
-    #     else:
-    #         gpio.setup(pin, gpio.IN)
-    #     gpio.add_event_detect(pin, gpio.FALLING, callback=button_callback, bouncetime=300)
+    # Configurar pinos de LED
+    gpio.setup(RED_OUTPUT_PIN, gpio.OUT)
+    gpio.setup(GREEN_OUTPUT_PIN, gpio.OUT)
+    gpio.output(RED_OUTPUT_PIN, gpio.HIGH) # Desligado
+    gpio.output(GREEN_OUTPUT_PIN, gpio.HIGH) # Desligado
+
+    for pin in RED_ADDRESS_PINS + GREEN_ADDRESS_PINS:
+        gpio.setup(pin, gpio.OUT)
+        gpio.output(pin, gpio.LOW)
+
+    # Configurar pinos de botão
+    for pin in BUTTON_GPIO_PINS:
+        gpio.setup(pin, gpio.IN, pull_up_down=gpio.PUD_UP)
+        gpio.add_event_detect(pin, gpio.FALLING, callback=button_callback, bouncetime=300)
 
 try:
-    setup_buttons()
+    setup()
     print("Hardware buttons initialized.")
 except RuntimeError:
     print("Could not setup GPIO. RPi.GPIO error.")
@@ -148,20 +199,26 @@ except Exception as e:
 
 def cleanup_gpio():
     print("Cleaning up GPIO...")
-    # gpio.cleanup()
+    gpio.cleanup()
 
 # QUANDO IMPORTAR ISSO N VAI EXECUTAR
 if __name__ == '__main__':
-    pass
-    # # Comentado para PC
-    # print("Loop de teste. Aperte Ctrl+C para sair.")
-    # try:
-    #     while True:
-    #         if not SYSTEM_ON and gpio.input(BUTTON_GPIO_PINS[6]) == gpio.LOW: 
-    #             pass 
-    # except KeyboardInterrupt:
-    #     print("Exiting test mode.")
-    # finally:
-    #     cleanup_gpio()
+    # Teste para os LEDs
+    print("Teste de LEDs. Pressione Ctrl+C para sair.")
+    try:
+        while True:
+            for i in range(16):
+                turnOnLed(i, "RED")
+                time.sleep(0.1)
+                turnOnLed(i, "GREEN")
+                time.sleep(0.1)
+                turnOnLed(i, "YELLOW")
+                time.sleep(0.1)
+                turnOffLed(i)
+                time.sleep(0.1)
+    except KeyboardInterrupt:
+        print("Exiting test mode.")
+    finally:
+        cleanup_gpio()
 
 #TODO communication with esp32
