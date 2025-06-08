@@ -13,8 +13,8 @@ GREEN_ADDRESS_PINS = [22, 10, 9, 11]
 RED_ADDRESS_PINS = [6, 13, 19, 26]
 
 # Mapeamento de LED para pino do DEMUX
-RED_MAP = [15,7,11,3,14,6,10,2,1,9,5,13,0,8,4,12]
-GREEN_MAP = [2,10,6,14,3,11,7,15,12,4,8,0,13,5,9,1]
+RED_MAP =   [ 0, 8, 4,12,  1, 9, 5, 13,  2, 10,  6, 14,  3, 11,  7, 15]
+GREEN_MAP = [13, 5, 9, 1, 12, 4, 8,  0, 15,  7, 11,  3, 14,  6, 10,  2]
 
 BUTTON_GPIO_PINS = [21, 20, 16, 12, 1, 7, 8]
 SYSTEM_ON = True 
