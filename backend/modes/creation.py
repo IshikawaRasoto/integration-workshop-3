@@ -69,7 +69,7 @@ async def run_mode():
 
     except asyncio.CancelledError: # when ModeManager does .cancel()
         if lastColumnIndex is not None:
-            hardware.turnOffLed(lastColumnIndex)
+            hardware.turnOffAllLeds()
             lastColumnIndex = None
         print("[CreationMode] Exited Creation Mode")
 
