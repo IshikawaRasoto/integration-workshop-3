@@ -9,7 +9,7 @@ class NoteDetection:
     def __init__(self):
         self.notes_detected = [("None", "") for _ in range(16)] #This variable is extremely important!
         self.running = True
-        self.cam = cv2.VideoCapture(2) #TODO change this value to 0 later 
+        self.cam = cv2.VideoCapture(0) #TODO change this value to 0 later 
 
         desired_width = 1920
         desired_height = 1080
