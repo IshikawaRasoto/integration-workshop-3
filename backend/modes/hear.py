@@ -51,6 +51,7 @@ async def run_mode():
                     if current_board_column_index >= 16:
                         #TODO play async the melody
                         print(">=16")
+                        await asyncio.sleep((60 / session.state.tempo)) 
                         for note, duration_string in current_melody_data:
                             durationInt = get_duration_value(duration_string)
                             await soundPlaying.play_note_async(note, (60 / session.state.tempo) * durationInt)

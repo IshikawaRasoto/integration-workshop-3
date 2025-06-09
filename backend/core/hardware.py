@@ -58,8 +58,8 @@ def turnOnLed(indexLed, color="GREEN"):
         gpio.output(RED_OUTPUT_PIN, gpio.LOW)
         gpio.output(GREEN_OUTPUT_PIN, gpio.HIGH)
     elif color.upper() == "YELLOW":
-        gpio.output(RED_OUTPUT_PIN, gpio.LOW)
-        gpio.output(GREEN_OUTPUT_PIN, gpio.LOW)
+        gpio.output(RED_OUTPUT_PIN, gpio.HIGH)
+        gpio.output(GREEN_OUTPUT_PIN, gpio.HIGH)
     else: # Off for unknown colors or "None"
         gpio.output(RED_OUTPUT_PIN, gpio.HIGH)
         gpio.output(GREEN_OUTPUT_PIN, gpio.HIGH)
