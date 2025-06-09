@@ -14,14 +14,14 @@ output_dir = "color_analysis_output"
 # Definindo os intervalos de cores no espaço HSV
 color_ranges = {
     'black': {'lower': np.array([0, 0, 0]), 'upper': np.array([180, 255, 30])},
-    'orange': {'lower': np.array([0, 100, 100]), 'upper': np.array([15, 255, 255])},
+    'orange': {'lower': np.array([0, 50, 100]), 'upper': np.array([15, 200, 255])},
     'pink': {'lower': np.array([160, 15, 140]), 'upper': np.array([180, 50, 255])},
     'blue': {'lower': np.array([100, 150, 50]), 'upper': np.array([130, 255, 255])},
     'green': {'lower': np.array([35, 30, 25]), 'upper': np.array([85, 255, 255])},
-    'red': {'lower1': np.array([0, 120, 70]), 'upper1': np.array([0, 255, 255]),
-                'lower2': np.array([170, 170, 100]), 'upper2': np.array([179, 255, 255])},
-    'wine': {'lower1': np.array([168, 50, 30]), 'upper1': np.array([180, 180, 160]),
-             'lower2': np.array([0, 50, 30]), 'upper2': np.array([2, 180, 160])},
+    'red': {'lower1': np.array([0, 90, 70]), 'upper1': np.array([0, 255, 255]),
+                'lower2': np.array([170, 90, 70]), 'upper2': np.array([179, 255, 255])},
+    'wine': {'lower1': np.array([168, 80, 30]), 'upper1': np.array([180, 180, 165]),
+             'lower2': np.array([0, 80, 30]), 'upper2': np.array([2, 160, 165])},
     'yellow': {'lower': np.array([20, 100, 100]), 'upper': np.array([40, 255, 255])},
     'cyan': {'lower': np.array([90, 30, 70]), 'upper': np.array([115, 150, 230])}
 }
@@ -114,7 +114,7 @@ def create_color_masks(hsv, debug):
         if debug:
             cv2.imwrite(f"{output_dir}/{color_name}/03-mask-small-holes.jpg", mask)
 
-        if color_name != 'green':
+        if color_name == 'black':
             mask_c = create_circles_mask(mask)
             if debug:
                 cv2.imwrite(f"{output_dir}/{color_name}/04-mask-circles.jpg", mask_c)
@@ -135,6 +135,7 @@ def analisar_cores_com_mascaras(frame_to_analyze, debug=False):
         for color_name in color_ranges.keys():
             os.makedirs(f'{output_dir}/{color_name}', exist_ok=True)
 
+    detected_notes_array = [("None", "") for _ in range(16)]
     duration_map = {1: "quarter", 2: "half", 4: "whole"}
     # frame = cv2.imread('board_warped.png')
     frame = frame_to_analyze
@@ -166,7 +167,6 @@ def analisar_cores_com_mascaras(frame_to_analyze, debug=False):
     bar_dy = 0
 
     note_parser = NoteParser()
-    detected_notes_grid = [[("None", "")] * 19] * 16
 
     for b in range(0, 4):
         p = (start_pos[0] + b*bar_dx, start_pos[1] + b*bar_dy)
@@ -178,20 +178,20 @@ def analisar_cores_com_mascaras(frame_to_analyze, debug=False):
 
                 predominant_color = find_predominant_color_in_rectangle(color_masks, top_left, bot_right) or 'None'
 
-                if debug:
-                    cv2.putText(grid_frame, predominant_color,
-                                (current_pos[0] - 15, current_pos[1] + 15),
-                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
+                cv2.putText(grid_frame, predominant_color,
+                            (current_pos[0] - 15, current_pos[1] + 15),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
 
-                    cv2.circle(grid_frame, current_pos, 5, (255, 0, 0), -1)
-                    cv2.rectangle(grid_frame, top_left, bot_right, (0, 255, 0), 3)
+                cv2.circle(grid_frame, current_pos, 5, (255, 0, 0), -1)
+                cv2.rectangle(grid_frame, top_left, bot_right, (0, 255, 0), 3)
 
                 if predominant_color != 'None':
                     note_name, duration_value = note_parser.parse_note((i, predominant_color), 'G')
                     duration_string = duration_map.get(duration_value, "")
-                    tempo_i = b * 4 + j
-
-                    detected_notes_grid[tempo_i][i] = (note_name, duration_string)
+                    
+                    array_index = b * 4 + j
+                    if 0 <= array_index < 16: # Should always be true with current loop structure
+                        detected_notes_array[array_index] = (note_name, duration_string)
 
                     if debug:
                         cv2.putText(found_notes, note_name,
@@ -212,22 +212,6 @@ def analisar_cores_com_mascaras(frame_to_analyze, debug=False):
     # plt.imshow(rgb)
     # plt.show()
     # return t0, t1
-
-    detected_notes_array = [("None", "") for _ in range(16)]
-
-    for col in range(0, 16):
-        has_found_in_row = False
-        for row in range(0, 19):
-            match detected_notes_grid[col][row]:
-                case ("None", _):
-                    pass
-                case detected_note:
-                    detected_notes_array[col] = detected_note
-                    has_found_in_row = True
-
-        if has_found_in_row:
-            detected_notes[col] = ("None", "")
-
     return detected_notes_array
 
 if __name__ == "__main__":

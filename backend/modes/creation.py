@@ -25,7 +25,8 @@ async def run_mode():
         while session.state.page == "creation":
 
             notes_and_durations = note_detect_obj.get_notes_detected()
-            
+            print (notes_and_durations)
+
             if session.state.playing:
 
                 elapsed = time.time() - start_time
@@ -39,8 +40,8 @@ async def run_mode():
                 if columnIndex == 0 and beats != 0:
                     await asyncio.sleep(1.5)  #little delay to start again
 
-                if session.state.accessibility:
-                    creationCommandEsp(columnIndex)
+                #if session.state.accessibility:
+                #    creationCommandEsp(columnIndex)
                 hardware.turnOnLed(columnIndex)  
                 lastColumnIndex = columnIndex
                 #print(notes_and_durations[columnIndex])

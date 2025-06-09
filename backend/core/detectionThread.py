@@ -25,7 +25,7 @@ class NoteDetection:
         
         _, frame = self.cam.read()
         frame = cv2.rotate(frame, cv2.ROTATE_180)
-        frame = frame[:-10, 180:-240]
+        frame = frame[:-10, 230:-240]
         self.calibration.generate_calibration(frame)
 
         self.run = 0
@@ -38,7 +38,7 @@ class NoteDetection:
                 cv2.imwrite("board.jpg", frame)
                 if os.path.exists("board.jpg"):
                     frame = cv2.rotate(frame, cv2.ROTATE_180)
-                    frame = frame[:-10, 180:-240]
+                    frame = frame[:-10, 230:-240]
                     frame = self.calibration.apply_calibration(frame)
                     self.notes_detected = analisar_cores_com_mascaras(frame, True)
                     # print("Notas detectadas: ")
