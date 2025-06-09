@@ -1,5 +1,5 @@
 import asyncio
-from core import session, utils, hardware
+from core import session, utils, hardware, soundPlaying
 from core.globals import note_detect_obj
 
 async def run_mode():
@@ -44,20 +44,26 @@ async def run_mode():
                     if session.state.accessibility:
                         print("Command esp to vibrate ONCE")
                         #TODO
-
-                    if current_board_column_index >= 16:
-                        reset_game()
-                        #TODO play async the melody
-                        await asyncio.sleep(8)          # Time to play the melody
-                        continue
-
-                    await hardware.api_manager.broadcast_state()
-                    await asyncio.sleep(3) 
-                    
+                    print("fora do 16")
                     # Goes to next column
                     expected_duration_value = get_duration_value(expected_duration)
-                    session.set_note_index(note_idx + expected_duration_value)
                     current_board_column_index += expected_duration_value
+                    if current_board_column_index >= 16:
+                        #TODO play async the melody
+                        print(">=16")
+                        for note, duration_string in current_melody_data:
+                            durationInt = get_duration_value(duration_string)
+                            await soundPlaying.play_note_async(note, (60 / session.state.tempo) * durationInt)
+                            await asyncio.sleep((60 / session.state.tempo)) 
+
+                        reset_game()
+                        await asyncio.sleep(8)          # Time to play the melody
+                        continue
+                    else:
+                        session.set_note_index(note_idx + expected_duration_value)
+                    await hardware.api_manager.broadcast_state()
+                    await asyncio.sleep(1)
+
                     continue
 
                 # Wrong Note and Duration

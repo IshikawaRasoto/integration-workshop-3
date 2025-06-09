@@ -40,7 +40,7 @@ class NoteDetection:
                     frame = cv2.rotate(frame, cv2.ROTATE_180)
                     frame = frame[:-10, 230:-240]
                     frame = self.calibration.apply_calibration(frame)
-                    self.notes_detected = analisar_cores_com_mascaras(frame, True)
+                    self.notes_detected = analisar_cores_com_mascaras(frame, False)
                     # print("Notas detectadas: ")
                     # print(self.notes_detected)
                 else:

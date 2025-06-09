@@ -20,7 +20,7 @@ color_ranges = {
     'green': {'lower': np.array([35, 30, 25]), 'upper': np.array([85, 255, 255])},
     'red': {'lower1': np.array([0, 90, 70]), 'upper1': np.array([0, 255, 255]),
                 'lower2': np.array([170, 90, 70]), 'upper2': np.array([179, 255, 255])},
-    'wine': {'lower1': np.array([168, 80, 30]), 'upper1': np.array([180, 180, 165]),
+    'wine': {'lower1': np.array([168, 80, 30]), 'upper1': np.array([180, 160, 165]),
              'lower2': np.array([0, 80, 30]), 'upper2': np.array([2, 160, 165])},
     'yellow': {'lower': np.array([20, 100, 100]), 'upper': np.array([40, 255, 255])},
     'cyan': {'lower': np.array([90, 30, 70]), 'upper': np.array([115, 150, 230])}

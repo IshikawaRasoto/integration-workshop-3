@@ -62,7 +62,7 @@ async def run_mode():
                     else:
                         sd.stop()
                 else:
-                    await soundPlaying.play_note_async(note,(60 / session.state.tempo) * durationInt)
+                    await soundPlaying.play_note_async(note, (60 / session.state.tempo) * durationInt)
 
                 beats += 1
 
