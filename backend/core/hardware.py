@@ -82,7 +82,7 @@ def emergency_off_actions():
     SYSTEM_ON = False
     print("System OFF ")
     turnOffAllLeds()
-    os.func("sudo reboot")
+    #os.func("sudo reboot")
 
 def system_on_actions():
     global SYSTEM_ON
