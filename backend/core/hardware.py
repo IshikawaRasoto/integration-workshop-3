@@ -78,11 +78,11 @@ def turnOffAllLeds():
 
 def emergency_off_actions():
     #TODO testar
-    os.func("sudo reboot")
     global SYSTEM_ON
     SYSTEM_ON = False
     print("System OFF ")
     turnOffAllLeds()
+    os.func("sudo reboot")
 
 def system_on_actions():
     global SYSTEM_ON
@@ -109,10 +109,8 @@ def button_callback(pin):
         return
 
     if button_index == 6: # Turn On/Off button
-        if SYSTEM_ON:
-            emergency_off_actions()
-        else:
-            system_on_actions()
+        
+        emergency_off_actions()
 
         if api_manager and main_event_loop and main_event_loop.is_running():
             asyncio.run_coroutine_threadsafe(api_manager.broadcast_state(), main_event_loop)
