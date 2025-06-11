@@ -77,8 +77,8 @@ def turnOffAllLeds():
     gpio.output(GREEN_OUTPUT_PIN, gpio.HIGH)
 
 def emergency_off_actions():
-    #TODO RESETAR A RASPBERRY
-    #TODO ligou a tomada, executa essa função
+    #TODO testar
+    os.func("sudo reboot")
     global SYSTEM_ON
     SYSTEM_ON = False
     print("System OFF ")
