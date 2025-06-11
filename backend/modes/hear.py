@@ -63,7 +63,7 @@ async def run_mode():
                         continue
                     else:
                         session.set_note_index(note_idx + expected_duration_value)
-                        expected_note_name, expected_duration = current_melody_data[note_idx]
+                        expected_note_name, expected_duration = current_melody_data[note_idx + expected_duration_value]
                         session.set_current_note_and_duration_for_display(expected_note_name, expected_duration)
                     await hardware.api_manager.broadcast_state()
                     await asyncio.sleep(3)
