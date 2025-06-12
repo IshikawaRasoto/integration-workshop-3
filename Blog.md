@@ -19,6 +19,11 @@
 > [!NOTE]
 > The more you scroll, older the posts will be.
 
+## 11th week (06/06/2025 - 12/06/2025)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N3duTqVcuXE?si=ARGd_qxq5gBDJ1mX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 ## 10th week (30/05/2025 - 05/06/2025)
 
 
