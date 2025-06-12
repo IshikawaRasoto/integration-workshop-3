@@ -21,7 +21,10 @@
 
 ## 11th week (06/06/2025 - 12/06/2025)
 
-<a href="https://www.youtube.com/watch?v=N3duTqVcuXE">Link para o vídeo no Youtube</a>
+<a href="https://www.youtube.com/watch?v=N3duTqVcuXE">Link for Youtube Video</a>
+
+> [!NOTE]
+> The video is in portuguese because our project aims brazillians music teachers. However, there are English subtitles made by ourselves available on Youtube. Just enable them if you want :D
 
 
 ## 10th week (30/05/2025 - 05/06/2025)
